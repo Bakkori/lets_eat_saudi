@@ -8,8 +8,10 @@ class Meal {
   final bool haveMeat;
   final bool haveEgg;
   final bool haveWheat;
-  final List<String> ingredient;
+  final List<String> ingredients;
   final List<String> addsOn;
+  final String imageUrl;
+  final String source;
 
   Meal(
       this.id,
@@ -21,6 +23,8 @@ class Meal {
       this.haveMeat,
       this.haveEgg,
       this.haveWheat,
-      this.ingredient,
-      this.addsOn);
+      this.ingredients,
+      this.addsOn,
+      this.imageUrl,
+      this.source);
 }
