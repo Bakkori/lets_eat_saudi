@@ -1,3 +1,5 @@
+import 'dart:ui';
+
 import 'package:flutter/material.dart';
 import 'package:lets_eat_saudi/screens/meals_screen.dart';
 
@@ -13,7 +15,9 @@ class CategoryItem extends StatelessWidget {
     return InkWell(
       onTap: () {
         Navigator.push(context, MaterialPageRoute(builder: (context) {
-          return const MealsScreen();
+          return MealsScreen(
+            category_id: id,
+          );
         }));
       },
       child: Stack(
