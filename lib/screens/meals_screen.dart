@@ -5,7 +5,7 @@ import 'package:lets_eat_saudi/widgets/meal_item.dart';
 class MealsScreen extends StatelessWidget {
   const MealsScreen({Key? key, required this.category_id}) : super(key: key);
 
-  final category_id;
+  final int category_id;
 
   @override
   Widget build(BuildContext context) {
