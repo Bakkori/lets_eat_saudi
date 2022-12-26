@@ -30,10 +30,7 @@ class _CategoriesScreenState extends State<CategoriesScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          //  centerTitle: true,
           title: const Text('التصنيفات'),
-          // backgroundColor: backgroundColor,
-          // elevation: 0,
         ),
         backgroundColor: Theme.of(context).backgroundColor,
         body: GridView.count(
