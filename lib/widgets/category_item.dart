@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:lets_eat_saudi/screens/meals_screen.dart';
 
 class CategoryItem extends StatelessWidget {
   final int id;
@@ -9,33 +10,40 @@ class CategoryItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Stack(
-      children: [
-        Container(
-          child: ClipRRect(
-            borderRadius: const BorderRadius.all(Radius.circular(15)),
-            //   padding: EdgeInsets.only(bottom: 10),
-            child: Image.asset(
-              'assets\\images\\categories\\$id.png',
-              height: 409.45,
-              width: 249.85,
-              fit: BoxFit.cover,
+    return InkWell(
+      onTap: () {
+        Navigator.push(context, MaterialPageRoute(builder: (context) {
+          return const MealsScreen();
+        }));
+      },
+      child: Stack(
+        children: [
+          Container(
+            child: ClipRRect(
+              borderRadius: const BorderRadius.all(Radius.circular(15)),
+              //   padding: EdgeInsets.only(bottom: 10),
+              child: Image.asset(
+                'assets\\images\\categories\\$id.png',
+                height: 409.45,
+                width: 249.85,
+                fit: BoxFit.cover,
+              ),
             ),
+            padding: const EdgeInsets.only(bottom: 10),
           ),
-          padding: EdgeInsets.only(bottom: 10),
-        ),
-        Positioned(
-          child: Text(
-            name,
-            style: const TextStyle(
-                fontSize: 22,
-                fontWeight: FontWeight.bold,
-                color: Colors.white70),
-          ),
-          bottom: 131,
-          right: 58,
-        )
-      ],
+          Positioned(
+            child: Text(
+              name,
+              style: const TextStyle(
+                  fontSize: 22,
+                  fontWeight: FontWeight.bold,
+                  color: Colors.white70),
+            ),
+            bottom: 131,
+            right: 58,
+          )
+        ],
+      ),
     );
   }
 }
