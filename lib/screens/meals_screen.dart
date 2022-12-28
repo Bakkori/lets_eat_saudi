@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:lets_eat_saudi/data/meals_data.dart';
+import 'package:lets_eat_saudi/screens/meal_info_screen.dart';
 import 'package:lets_eat_saudi/widgets/meal_item.dart';
 import '../models/meals.dart';
 
@@ -47,8 +48,18 @@ class _MealsScreenState extends State<MealsScreen> {
                 crossAxisCount: 2,
               ),
               itemBuilder: (ctx, index) {
-                return MealItem(
-                    imageUrl: meals[index].imageUrl, name: meals[index].name);
+                return InkWell(
+                  onTap: () {
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: (context) {
+                      return MealInfoScreen(
+                          mealName: meals[index].name,
+                          imageUrl: meals[index].imageUrl);
+                    }));
+                  },
+                  child: MealItem(
+                      imageUrl: meals[index].imageUrl, name: meals[index].name),
+                );
               })
           : const Center(
               child: Text('لاتوجد أطباق متاحة'),
