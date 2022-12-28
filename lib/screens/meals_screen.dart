@@ -39,16 +39,20 @@ class _MealsScreenState extends State<MealsScreen> {
       appBar: AppBar(
         title: const Text('الأطباق'),
       ),
-      body: GridView.builder(
-          itemCount: meals.length,
-          padding: const EdgeInsets.all(15),
-          gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-            crossAxisCount: 2,
-          ),
-          itemBuilder: (ctx, index) {
-            return MealItem(
-                imageUrl: meals[index].imageUrl, name: meals[index].name);
-          }),
+      body: (meals.isNotEmpty)
+          ? GridView.builder(
+              itemCount: meals.length,
+              padding: const EdgeInsets.all(15),
+              gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                crossAxisCount: 2,
+              ),
+              itemBuilder: (ctx, index) {
+                return MealItem(
+                    imageUrl: meals[index].imageUrl, name: meals[index].name);
+              })
+          : const Center(
+              child: Text('لاتوجد أطباق متاحة'),
+            ),
     );
   }
 }
