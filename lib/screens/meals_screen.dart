@@ -13,8 +13,8 @@ class MealsScreen extends StatefulWidget {
 }
 
 class _MealsScreenState extends State<MealsScreen> {
-  List mealsList = MealsData().mealsData;
-  List meals = [];
+  List<Meal> mealsList = MealsData().mealsData;
+  List<Meal> meals = [];
 
   @override
   void initState() {

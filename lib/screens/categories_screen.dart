@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:lets_eat_saudi/data/categories_data.dart';
+import 'package:lets_eat_saudi/models/category.dart';
 import 'package:lets_eat_saudi/widgets/category_item.dart';
 
 class CategoriesScreen extends StatefulWidget {
@@ -10,7 +11,7 @@ class CategoriesScreen extends StatefulWidget {
 }
 
 class _CategoriesScreenState extends State<CategoriesScreen> {
-  List categories = CategoriesData().categoriesData;
+  List<Category> categories = CategoriesData().categoriesData;
 
   List<CategoryItem> categoriesWidgetList = [];
   setCategoriesWidgetList() {
