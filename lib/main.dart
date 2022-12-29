@@ -19,17 +19,25 @@ class LetsEatSaudi extends StatelessWidget {
         checkerboardOffscreenLayers: true,
         debugShowCheckedModeBanner: false,
         theme: ThemeData(
+          backgroundColor: backgroundColor,
+          splashColor: secondaryColor,
+          appBarTheme: const AppBarTheme(
+            foregroundColor: secondaryColor,
+            centerTitle: true,
             backgroundColor: backgroundColor,
-            appBarTheme: const AppBarTheme(
-              foregroundColor: secondaryColor,
-              centerTitle: true,
-              backgroundColor: backgroundColor,
-              elevation: 0,
-              titleTextStyle: TextStyle(
-                  color: secondaryColor,
-                  fontWeight: FontWeight.bold,
-                  fontSize: 20),
-            )),
+            elevation: 0,
+            titleTextStyle: TextStyle(
+                color: secondaryColor,
+                fontWeight: FontWeight.bold,
+                fontSize: 20),
+          ),
+          textTheme: ThemeData.light().textTheme.copyWith(
+              bodyText1: TextStyle(
+                  color: Theme.of(context).splashColor,
+                  fontSize: 22,
+                  fontWeight: FontWeight.w500),
+              button: const TextStyle(color: backgroundColor)),
+        ),
         home: CategoriesScreen());
   }
 }
