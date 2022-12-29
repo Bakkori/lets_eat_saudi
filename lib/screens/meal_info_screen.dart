@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:lets_eat_saudi/screens/allergies_sheet.dart';
 
 class MealInfoScreen extends StatelessWidget {
   const MealInfoScreen(
@@ -6,8 +7,10 @@ class MealInfoScreen extends StatelessWidget {
       required this.mealName,
       required this.imageUrl,
       required this.ingredients,
-      required this.addsOn})
+      required this.addsOn,
+      required this.id})
       : super(key: key);
+  final int id;
   final String mealName;
   final String imageUrl;
   final List<String> ingredients;
@@ -32,8 +35,8 @@ class MealInfoScreen extends StatelessWidget {
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                setButton(context, 'معلومات الحساسية'),
-                setButton(context, 'معلومات الحمية الغذائية')
+                setButton(context, 'معلومات الحساسية', 0, id),
+                setButton(context, 'معلومات الحمية الغذائية', 1, id)
               ],
             ),
             Text(
@@ -71,24 +74,39 @@ class MealInfoScreen extends StatelessWidget {
   }
 }
 
-setButton(BuildContext context, String title) {
-  return Container(
-    //padding: EdgeInsets.all(15),
-    margin: EdgeInsets.all(15),
-    height: 50,
-    width: 150,
-    child: Center(
-        child: Text(
-      title,
-      style: Theme.of(context).textTheme.button,
-    )),
-    //   color: Colors.blueAccent,
-    decoration: BoxDecoration(
-        borderRadius: const BorderRadius.all(Radius.circular(15)),
-        color: Theme.of(context).splashColor),
+setButton(BuildContext context, String title, int setOption, int id) {
+  return InkWell(
+    borderRadius: const BorderRadius.all(Radius.circular(15)),
+    onTap: () {
+      if (setOption == 0) {
+        showBottomSheet(context, AllergiesSheet(id: id));
+      }
+    },
+    child: Container(
+      margin: EdgeInsets.all(15),
+      height: 50,
+      width: 150,
+      child: Center(
+          child: Text(
+        title,
+        style: Theme.of(context).textTheme.button,
+      )),
+      //   color: Colors.blueAccent,
+      decoration: BoxDecoration(
+          borderRadius: const BorderRadius.all(Radius.circular(10)),
+          color: Theme.of(context).splashColor),
+    ),
   );
 }
 
 double calcHeight(List<String> list) {
   return list.length * 30;
+}
+
+showBottomSheet(BuildContext context, Widget buttomSheet) {
+  return showModalBottomSheet(
+      context: context,
+      builder: (context) {
+        return Center(child: buttomSheet);
+      });
 }
