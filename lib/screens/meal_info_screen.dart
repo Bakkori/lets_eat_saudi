@@ -44,7 +44,7 @@ class MealInfoScreen extends StatelessWidget {
                   fontWeight: FontWeight.w500),
             ),
             SizedBox(
-                height: 60,
+                height: calcHeight(ingredients),
                 child: ListView.builder(
                     itemCount: ingredients.length,
                     itemBuilder: (ctx, index) {
@@ -58,9 +58,9 @@ class MealInfoScreen extends StatelessWidget {
                   fontWeight: FontWeight.w500),
             ),
             SizedBox(
-                height: 100,
+                height: calcHeight(addsOn),
                 child: ListView.builder(
-                    itemCount: ingredients.length,
+                    itemCount: addsOn.length,
                     itemBuilder: (ctx, index) {
                       return Center(child: Text(addsOn[index]));
                     })),
@@ -87,4 +87,8 @@ setButton(BuildContext context, String title) {
         borderRadius: const BorderRadius.all(Radius.circular(15)),
         color: Theme.of(context).splashColor),
   );
+}
+
+double calcHeight(List<String> list) {
+  return list.length * 30;
 }
