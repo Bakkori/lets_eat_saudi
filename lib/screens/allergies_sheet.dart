@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/painting.dart';
 import 'package:lets_eat_saudi/data/meals_data.dart';
 import 'package:lets_eat_saudi/models/meals.dart';
 
@@ -11,24 +12,52 @@ class AllergiesSheet extends StatelessWidget {
   Widget build(BuildContext context) {
     List<Meal> meals = MealsData().mealsData;
     Meal meal = meals.firstWhere((meal) => meal.id == id);
+    BuildContext ctx = context;
 
     return Center(
       child: Padding(
-        padding: const EdgeInsets.all(15),
+        padding: const EdgeInsets.all(20),
         child: Column(
           children: [
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Text(getYesOrNo(meal.haveMilk)),
-                SizedBox(
-                  width: 100,
-                ),
-                const Text('هل يتوفر به حليب؟'),
-              ],
-            )
+            allergicInfoLine('هل يتوفر به بيض؟', meal.haveEgg, '🥚'),
+            allergicInfoLine('هل يتوفر به لحم؟', meal.haveMeat, '🥩'),
+            allergicInfoLine('هل يتوفر به حليب؟', meal.haveMilk, '🥛'),
+            allergicInfoLine('هل يتوفر به قمح؟', meal.haveWheat, '🌾'),
           ],
         ),
+      ),
+    );
+  }
+
+  Card allergicInfoLine(String question, bool element, String icon) {
+    TextStyle style = const TextStyle(fontSize: 16);
+    return Card(
+      margin: EdgeInsets.all(2),
+      color: Colors.white10,
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: [
+          Text(
+            ' ${getYesOrNo(element)} ',
+            style: style,
+          ),
+          const SizedBox(
+            width: 100,
+          ),
+          Row(
+            children: [
+              Text(' $icon '),
+              Padding(
+                padding: const EdgeInsets.only(right: 5),
+                child: Text(
+                  question,
+                  style: style,
+                  textAlign: TextAlign.right,
+                ),
+              ),
+            ],
+          ),
+        ],
       ),
     );
   }
@@ -36,8 +65,8 @@ class AllergiesSheet extends StatelessWidget {
 
 String getYesOrNo(bool value) {
   if (value == true) {
-    return 'Yes';
+    return 'نعم';
   } else {
-    return 'No';
+    return 'لا';
   }
 }
