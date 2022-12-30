@@ -36,15 +36,15 @@ class CategoryItem extends StatelessWidget {
             padding: const EdgeInsets.only(bottom: 10),
           ),
           Positioned(
-            child: Text(
-              name,
-              style: const TextStyle(
-                  fontSize: 22,
-                  fontWeight: FontWeight.bold,
-                  color: Colors.white70),
+            child: Center(
+              child: Text(
+                name,
+                style: const TextStyle(
+                    fontSize: 22,
+                    fontWeight: FontWeight.bold,
+                    color: Colors.white70),
+              ),
             ),
-            bottom: 131,
-            right: 58,
           )
         ],
       ),
