@@ -1,8 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:lets_eat_saudi/screens/categories_screen.dart';
-import 'package:lets_eat_saudi/screens/meals_screen.dart';
-import 'package:lets_eat_saudi/widgets/category_item.dart';
-import 'package:lets_eat_saudi/widgets/meal_item.dart';
 
 void main() {
   runApp(const LetsEatSaudi());
