@@ -19,17 +19,17 @@ class AllergiesSheet extends StatelessWidget {
         padding: const EdgeInsets.all(20),
         child: Column(
           children: [
-            allergicInfoLine('هل يتوفر به بيض؟', meal.haveEgg, '🥚'),
-            allergicInfoLine('هل يتوفر به لحم؟', meal.haveMeat, '🥩'),
-            allergicInfoLine('هل يتوفر به حليب؟', meal.haveMilk, '🥛'),
-            allergicInfoLine('هل يتوفر به قمح؟', meal.haveWheat, '🌾'),
+            allergicInfoCard('هل يتوفر به بيض؟', meal.haveEgg, '🥚'),
+            allergicInfoCard('هل يتوفر به لحم؟', meal.haveMeat, '🥩'),
+            allergicInfoCard('هل يتوفر به حليب؟', meal.haveMilk, '🥛'),
+            allergicInfoCard('هل يتوفر به قمح؟', meal.haveWheat, '🌾'),
           ],
         ),
       ),
     );
   }
 
-  Card allergicInfoLine(String question, bool element, String icon) {
+  Card allergicInfoCard(String question, bool element, String icon) {
     TextStyle style = const TextStyle(fontSize: 16);
     return Card(
       margin: EdgeInsets.all(2),
