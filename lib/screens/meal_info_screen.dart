@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:lets_eat_saudi/screens/allergies_sheet.dart';
+import 'package:lets_eat_saudi/screens/diet_sheet.dart';
 
 class MealInfoScreen extends StatelessWidget {
   const MealInfoScreen(
@@ -81,6 +82,9 @@ setButton(BuildContext context, String title, int setOption, int id) {
       if (setOption == 0) {
         showBottomSheet(context, AllergiesSheet(id: id));
       }
+      if (setOption == 1) {
+        showBottomSheet(context, DietSheet(id: id));
+      }
     },
     child: Container(
       margin: EdgeInsets.all(15),
@@ -105,6 +109,7 @@ double calcHeight(List<String> list) {
 
 showBottomSheet(BuildContext context, Widget buttomSheet) {
   return showModalBottomSheet(
+      backgroundColor: Theme.of(context).backgroundColor,
       context: context,
       builder: (context) {
         return Center(child: buttomSheet);
