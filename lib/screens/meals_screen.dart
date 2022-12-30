@@ -53,6 +53,7 @@ class _MealsScreenState extends State<MealsScreen> {
                     Navigator.push(context,
                         MaterialPageRoute(builder: (context) {
                       return MealInfoScreen(
+                        id: meals[index].id,
                         mealName: meals[index].name,
                         imageUrl: meals[index].imageUrl,
                         ingredients: meals[index].ingredients,
