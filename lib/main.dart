@@ -14,6 +14,7 @@ class LetsEatSaudi extends StatelessWidget {
     const secondaryColor = Color.fromRGBO(149, 39, 57, 1);
     return MaterialApp(
         debugShowCheckedModeBanner: false,
+        title: "Let's Eat Saudi",
         theme: ThemeData(
           backgroundColor: backgroundColor,
           splashColor: secondaryColor,
@@ -34,6 +35,6 @@ class LetsEatSaudi extends StatelessWidget {
                   fontWeight: FontWeight.w500),
               button: const TextStyle(color: backgroundColor)),
         ),
-        home: CategoriesScreen());
+        home: const CategoriesScreen());
   }
 }
