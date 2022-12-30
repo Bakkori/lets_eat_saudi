@@ -16,7 +16,6 @@ class LetsEatSaudi extends StatelessWidget {
     const backgroundColor = Color.fromRGBO(214, 214, 187, 1);
     const secondaryColor = Color.fromRGBO(149, 39, 57, 1);
     return MaterialApp(
-        checkerboardOffscreenLayers: true,
         debugShowCheckedModeBanner: false,
         theme: ThemeData(
           backgroundColor: backgroundColor,
