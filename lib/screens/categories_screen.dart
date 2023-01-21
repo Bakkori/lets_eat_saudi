@@ -1,5 +1,6 @@
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
-import 'package:lets_eat_saudi/data/categories_data.dart';
+import 'package:lets_eat_saudi/models/data/categories_data.dart';
 import 'package:lets_eat_saudi/models/category.dart';
 import 'package:lets_eat_saudi/widgets/category_item.dart';
 

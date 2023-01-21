@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:lets_eat_saudi/data/meals_data.dart';
+import 'package:lets_eat_saudi/models/data/meals_data.dart';
 import 'package:lets_eat_saudi/models/meals.dart';
 
 class DietSheet extends StatelessWidget {
