@@ -1,4 +1,8 @@
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/rendering.dart';
+import 'package:flutter/services.dart';
+import 'package:lets_eat_saudi/models/data/reviews.dart';
 import 'package:lets_eat_saudi/screens/allergies_sheet.dart';
 import 'package:lets_eat_saudi/screens/diet_sheet.dart';
 
@@ -50,6 +54,7 @@ class MealInfoScreen extends StatelessWidget {
             SizedBox(
                 height: calcHeight(ingredients),
                 child: ListView.builder(
+                    physics: const NeverScrollableScrollPhysics(),
                     itemCount: ingredients.length,
                     itemBuilder: (ctx, index) {
                       return Center(child: Text(ingredients[index]));
@@ -64,12 +69,71 @@ class MealInfoScreen extends StatelessWidget {
             SizedBox(
                 height: calcHeight(addsOn),
                 child: ListView.builder(
+                    physics: const NeverScrollableScrollPhysics(),
                     itemCount: addsOn.length,
                     itemBuilder: (ctx, index) {
                       return Center(child: Text(addsOn[index]));
                     })),
+            reviewListBuilder(),
+            TextButton.icon(
+              style: ButtonStyle(
+                  overlayColor: MaterialStateProperty.all(Colors.black12),
+                  foregroundColor:
+                      MaterialStateProperty.all(Theme.of(context).splashColor)),
+              onPressed: () {
+                showReviewSection(context);
+              },
+              icon: Icon(
+                Icons.draw_rounded,
+              ),
+              label: Text(
+                'أكتب تقييمك',
+              ),
+            )
           ],
         ),
+      ),
+    );
+  }
+
+  Future showReviewSection(BuildContext context) {
+    return showDialog(
+        context: context,
+        builder: ((context) => AlertDialog(
+              backgroundColor: Theme.of(context).backgroundColor,
+              title: const Text('أكتب تقيمك'),
+              content: TextField(),
+              actions: [
+                TextButton(
+                  child: Text(
+                    'تم',
+                    style: TextStyle(color: Theme.of(context).splashColor),
+                  ),
+                  onPressed: () => {},
+                )
+              ],
+            )));
+  }
+
+// (String rating, String review)
+  Container reviewListBuilder() {
+    // TODO:
+    Reviews reviews = Reviews().getReviews();
+    return Container(
+      color: Colors.black12,
+      margin: const EdgeInsets.all(10),
+      padding: const EdgeInsets.all(10),
+      child: Column(
+        children: const [
+          Text(
+            'التقييمات والآراء',
+            style: TextStyle(fontWeight: FontWeight.bold),
+          ),
+          ListTile(
+            title: Text('5/4.7'),
+            trailing: Text('صراحة من أفضل الوجبات'),
+          )
+        ],
       ),
     );
   }
