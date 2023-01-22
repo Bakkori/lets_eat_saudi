@@ -118,7 +118,7 @@ class MealInfoScreen extends StatelessWidget {
 // (String rating, String review)
   Container reviewListBuilder() {
     // TODO:
-    Reviews reviews = Reviews().getReviews();
+    //  Reviews reviews = Reviews().getReviews();
     return Container(
       color: Colors.black12,
       margin: const EdgeInsets.all(10),
