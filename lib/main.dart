@@ -17,7 +17,7 @@ class LetsEatSaudi extends StatelessWidget {
         title: "Let's Eat Saudi",
         theme: ThemeData(
           useMaterial3: true,
-          //   androidOverscrollIndicator: AndroidOverscrollIndicator.glow,
+          //  androidOverscrollIndicator: AndroidOverscrollIndicator.stretch,
           backgroundColor: backgroundColor,
           splashColor: secondaryColor,
           appBarTheme: const AppBarTheme(
