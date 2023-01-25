@@ -33,7 +33,6 @@ class _MealInfoScreenState extends State<MealInfoScreen> {
   @override
   Widget build(BuildContext context) {
     final reviewsData = Provider.of<Reviews>(context);
-    final reviews = reviewsData.reviews;
     return Scaffold(
       backgroundColor: Theme.of(context).backgroundColor,
       appBar: AppBar(
@@ -63,7 +62,7 @@ class _MealInfoScreenState extends State<MealInfoScreen> {
                   fontWeight: FontWeight.w500),
             ),
             SizedBox(
-                height: calcHeight(widget.ingredients),
+                height: calcListHeight(widget.ingredients),
                 child: ListView.builder(
                     physics: const NeverScrollableScrollPhysics(),
                     itemCount: widget.ingredients.length,
@@ -78,7 +77,7 @@ class _MealInfoScreenState extends State<MealInfoScreen> {
                   fontWeight: FontWeight.w500),
             ),
             SizedBox(
-                height: calcHeight(widget.addsOn),
+                height: calcListHeight(widget.addsOn),
                 child: ListView.builder(
                     physics: const NeverScrollableScrollPhysics(),
                     itemCount: widget.addsOn.length,
@@ -141,9 +140,8 @@ class _MealInfoScreenState extends State<MealInfoScreen> {
             )));
   }
 
-// (String rating, String review)
   Container reviewListBuilder(int id, Reviews reviews) {
-    double sizedBoxHeight = calcHeightTile(reviews.getReviews(id));
+    double sizedBoxHeight = calcReviewSectionHeight(reviews.getReviews(id));
     return Container(
       height: sizedBoxHeight,
       color: Colors.black12,
@@ -201,11 +199,11 @@ setButton(BuildContext context, String title, int setOption, int id) {
   );
 }
 
-double calcHeight(List list) {
+double calcListHeight(List list) {
   return list.length * 30;
 }
 
-double calcHeightTile(List list) {
+double calcReviewSectionHeight(List list) {
   return (list.length * 60) + 40;
 }
 
