@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:lets_eat_saudi/models/data/meals_data.dart';
+import 'package:lets_eat_saudi/models/data/reviews.dart';
 import 'package:lets_eat_saudi/screens/meal_info_screen.dart';
 import 'package:lets_eat_saudi/widgets/meal_item.dart';
+import 'package:provider/provider.dart';
 import '../models/meals.dart';
 
 class MealsScreen extends StatefulWidget {

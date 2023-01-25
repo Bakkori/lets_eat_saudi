@@ -3,10 +3,13 @@ import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:flutter/services.dart';
 import 'package:lets_eat_saudi/models/data/reviews.dart';
+import 'package:lets_eat_saudi/models/review.dart';
 import 'package:lets_eat_saudi/screens/allergies_sheet.dart';
 import 'package:lets_eat_saudi/screens/diet_sheet.dart';
+import 'package:provider/provider.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
-class MealInfoScreen extends StatelessWidget {
+class MealInfoScreen extends StatefulWidget {
   const MealInfoScreen(
       {Key? key,
       required this.mealName,
@@ -22,26 +25,40 @@ class MealInfoScreen extends StatelessWidget {
   final List<String> addsOn;
 
   @override
+  State<MealInfoScreen> createState() => _MealInfoScreenState();
+}
+
+class _MealInfoScreenState extends State<MealInfoScreen> {
+  @override
+  Reviews reviews = Reviews();
+  savedPrefd(List<String> reviews) async {
+    SharedPreferences preferences = await SharedPreferences.getInstance();
+    preferences.setStringList('reviews', reviews);
+  }
+
+  @override
   Widget build(BuildContext context) {
+    final reviewsData = Provider.of<Reviews>(context);
+    final reviews = reviewsData.reviews;
     return Scaffold(
       backgroundColor: Theme.of(context).backgroundColor,
       appBar: AppBar(
-        title: Text(mealName),
+        title: Text(widget.mealName),
       ),
       body: SingleChildScrollView(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             Image.network(
-              imageUrl,
+              widget.imageUrl,
               width: double.infinity,
               fit: BoxFit.cover,
             ),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                setButton(context, 'معلومات الحساسية', 0, id),
-                setButton(context, 'معلومات الحمية الغذائية', 1, id)
+                setButton(context, 'معلومات الحساسية', 0, widget.id),
+                setButton(context, 'معلومات الحمية الغذائية', 1, widget.id)
               ],
             ),
             Text(
@@ -52,12 +69,12 @@ class MealInfoScreen extends StatelessWidget {
                   fontWeight: FontWeight.w500),
             ),
             SizedBox(
-                height: calcHeight(ingredients),
+                height: calcHeight(widget.ingredients),
                 child: ListView.builder(
                     physics: const NeverScrollableScrollPhysics(),
-                    itemCount: ingredients.length,
+                    itemCount: widget.ingredients.length,
                     itemBuilder: (ctx, index) {
-                      return Center(child: Text(ingredients[index]));
+                      return Center(child: Text(widget.ingredients[index]));
                     })),
             Text(
               'الإضافات',
@@ -67,26 +84,26 @@ class MealInfoScreen extends StatelessWidget {
                   fontWeight: FontWeight.w500),
             ),
             SizedBox(
-                height: calcHeight(addsOn),
+                height: calcHeight(widget.addsOn),
                 child: ListView.builder(
                     physics: const NeverScrollableScrollPhysics(),
-                    itemCount: addsOn.length,
+                    itemCount: widget.addsOn.length,
                     itemBuilder: (ctx, index) {
-                      return Center(child: Text(addsOn[index]));
+                      return Center(child: Text(widget.addsOn[index]));
                     })),
-            reviewListBuilder(),
+            reviewListBuilder(widget.id),
             TextButton.icon(
               style: ButtonStyle(
                   overlayColor: MaterialStateProperty.all(Colors.black12),
                   foregroundColor:
                       MaterialStateProperty.all(Theme.of(context).splashColor)),
               onPressed: () {
-                showReviewSection(context);
+                showReviewSection(context, widget.id);
               },
-              icon: Icon(
+              icon: const Icon(
                 Icons.draw_rounded,
               ),
-              label: Text(
+              label: const Text(
                 'أكتب تقييمك',
               ),
             )
@@ -96,43 +113,65 @@ class MealInfoScreen extends StatelessWidget {
     );
   }
 
-  Future showReviewSection(BuildContext context) {
-    return showDialog(
+  Future<String?> showReviewSection(BuildContext context, int id) {
+    TextEditingController review = TextEditingController();
+    void sumbit() {
+      setState(() {
+        reviews.addReviw(review.text, id);
+        Navigator.of(context).pop();
+      });
+    }
+
+    return showDialog<String?>(
         context: context,
         builder: ((context) => AlertDialog(
               backgroundColor: Theme.of(context).backgroundColor,
               title: const Text('أكتب تقيمك'),
-              content: TextField(),
+              content: TextField(
+                autofocus: true,
+                controller: review,
+                onSubmitted: ((value) {
+                  sumbit();
+                  reviews.printRev();
+                }),
+              ),
               actions: [
                 TextButton(
-                  child: Text(
-                    'تم',
-                    style: TextStyle(color: Theme.of(context).splashColor),
-                  ),
-                  onPressed: () => {},
-                )
+                    child: Text(
+                      'تم',
+                      style: TextStyle(color: Theme.of(context).splashColor),
+                    ),
+                    onPressed: sumbit),
               ],
             )));
   }
 
 // (String rating, String review)
-  Container reviewListBuilder() {
-    // TODO:
-    //  Reviews reviews = Reviews().getReviews();
+  Container reviewListBuilder(int id) {
+    double sizedBoxHeight = calcHeightTile(reviews.getReviews(id));
     return Container(
+      height: sizedBoxHeight,
       color: Colors.black12,
       margin: const EdgeInsets.all(10),
       padding: const EdgeInsets.all(10),
       child: Column(
-        children: const [
-          Text(
+        children: [
+          const Text(
             'التقييمات والآراء',
             style: TextStyle(fontWeight: FontWeight.bold),
           ),
-          ListTile(
-            title: Text('5/4.7'),
-            trailing: Text('صراحة من أفضل الوجبات'),
-          )
+          Flexible(
+            child: ListView.builder(
+                physics: const NeverScrollableScrollPhysics(),
+                itemCount: reviews.getReviews(id).length,
+                itemBuilder: (ctx, index) {
+                  return ListTile(
+                    title: Text('5/4.7'),
+                    trailing:
+                        Text(reviews.getReviews(id).elementAt(index).review),
+                  );
+                }),
+          ),
         ],
       ),
     );
@@ -151,7 +190,7 @@ setButton(BuildContext context, String title, int setOption, int id) {
       }
     },
     child: Container(
-      margin: EdgeInsets.all(15),
+      margin: const EdgeInsets.all(15),
       height: 50,
       width: 150,
       child: Center(
@@ -167,8 +206,12 @@ setButton(BuildContext context, String title, int setOption, int id) {
   );
 }
 
-double calcHeight(List<String> list) {
+double calcHeight(List list) {
   return list.length * 30;
+}
+
+double calcHeightTile(List list) {
+  return (list.length * 60) + 40;
 }
 
 showBottomSheet(BuildContext context, Widget buttomSheet) {
