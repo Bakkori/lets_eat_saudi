@@ -30,12 +30,6 @@ class MealInfoScreen extends StatefulWidget {
 
 class _MealInfoScreenState extends State<MealInfoScreen> {
   @override
-  Reviews reviews = Reviews();
-  savedPrefd(List<String> reviews) async {
-    SharedPreferences preferences = await SharedPreferences.getInstance();
-    preferences.setStringList('reviews', reviews);
-  }
-
   @override
   Widget build(BuildContext context) {
     final reviewsData = Provider.of<Reviews>(context);
@@ -91,14 +85,14 @@ class _MealInfoScreenState extends State<MealInfoScreen> {
                     itemBuilder: (ctx, index) {
                       return Center(child: Text(widget.addsOn[index]));
                     })),
-            reviewListBuilder(widget.id),
+            reviewListBuilder(widget.id, reviewsData),
             TextButton.icon(
               style: ButtonStyle(
                   overlayColor: MaterialStateProperty.all(Colors.black12),
                   foregroundColor:
                       MaterialStateProperty.all(Theme.of(context).splashColor)),
               onPressed: () {
-                showReviewSection(context, widget.id);
+                showReviewSection(context, widget.id, reviewsData);
               },
               icon: const Icon(
                 Icons.draw_rounded,
@@ -113,7 +107,8 @@ class _MealInfoScreenState extends State<MealInfoScreen> {
     );
   }
 
-  Future<String?> showReviewSection(BuildContext context, int id) {
+  Future<String?> showReviewSection(
+      BuildContext context, int id, Reviews reviews) {
     TextEditingController review = TextEditingController();
     void sumbit() {
       setState(() {
@@ -147,7 +142,7 @@ class _MealInfoScreenState extends State<MealInfoScreen> {
   }
 
 // (String rating, String review)
-  Container reviewListBuilder(int id) {
+  Container reviewListBuilder(int id, Reviews reviews) {
     double sizedBoxHeight = calcHeightTile(reviews.getReviews(id));
     return Container(
       height: sizedBoxHeight,
