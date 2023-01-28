@@ -61,7 +61,30 @@ class MealsData {
           ],
           [' بالكزبرة المفرومة'],
           'https://modo3.com/thumbs/fit630x300/147754/1481539129/%D9%85%D8%A7_%D9%87%D9%8A_%D8%A3%D9%83%D9%84%D8%A9_%D8%A7%D9%84%D8%AB%D8%B1%D9%8A%D8%AF.jpg',
-          'https://kitchen.sayidaty.net/node/6760/ثريد-اللحم-السعودي/أكلات-اللحوم'),
+          'https://kitchen.sayidaty.net/node/6760/ثريد-اللحم-السعودي/أكلات-اللحوم'),   
+          Meal(
+          1014,
+          ' لحوح بالسكر ',
+          [101],
+          false,
+          true,
+          true,
+          false,
+          true,
+          true,
+          [
+            'طحين',
+            ' الماء',
+            'البيض',
+            ' خميرة',
+            'حليب',
+            ' الفانيليا',
+            'الزبدة',
+            ' سكر'
+          ],
+          [' كمية قليلة من السكر الأبيض المطحون بشكل ناعم'],
+          'https://www.almrsal.com/wp-content/uploads/2019/05/اللحوح-السعودي.png',
+          'https://kitchen.sayidaty.net/node/2732/طريقة-عمل-اللحوح-السعودي-الشهي/حلويات'),
     ];
   }
 }
