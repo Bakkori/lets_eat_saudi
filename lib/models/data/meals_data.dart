@@ -142,6 +142,28 @@ class MealsData {
           ['بصل للتزيين شرائح '],
           'https://www.justfood.tv/UserFiles/ma3dous_source_jf_2.JPG',
           'https://www.justfood.tv/وصفات/26993/طريقة-عمل-المعدوس-الحجازي'),
+          Meal(
+          1017,
+          'اللبنية  ',
+          [101],
+          false,
+          true,
+          true,
+          false,
+          false,
+          false,
+          [
+            ' حليب نيدو',
+            ' سكر',
+            'ماء',
+            '  زبدة',
+            'حبهان مطحون',
+            ' أبيض',
+            'ماء ورد',
+          ],
+          ['الفستق '],
+          'https://www.mmlakaty.com/wp-content/uploads/2016/10/100-3.jpg',
+          'https://www.mmlakaty.com/وصفات/طريقة-عمل-اللبنية-الحجازية/'),
 
     ];
   }
