@@ -164,6 +164,21 @@ class MealsData {
           ['الفستق '],
           'https://www.mmlakaty.com/wp-content/uploads/2016/10/100-3.jpg',
           'https://www.mmlakaty.com/وصفات/طريقة-عمل-اللبنية-الحجازية/'),
+          Meal(
+          1018,
+          'دبيازة   ',
+          [101],
+          true,
+          true,
+          false,
+          false,
+          false,
+          false,
+          ['التمر', ' تين مجفّف', 'مشمش مجفّف', ' هيل', 'زبيب', ' سكر', 'لوز', ' قمرالدين','القرنفل ', ' سمن ', ' القرفة ', ' هيل'],
+          [' مشمش'],
+          'https://kitchen.sayidaty.net/uploads/node/DEEBAZA.jpg',
+          'https://kitchen.sayidaty.net/node/3317/الدبيازة-السعودية-..-حلا-العيد-التقليدي/حلويات/وصفات-رمضانية'),
+
 
     ];
   }
