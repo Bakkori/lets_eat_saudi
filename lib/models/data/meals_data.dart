@@ -116,6 +116,32 @@ class MealsData {
           ['بقدونس'],
           'https://www.mmlakaty.com/wp-content/uploads/2021/03/%D8%B7%D8%B1%D9%8A%D9%82%D8%A9-%D8%B9%D9%85%D9%84-%D9%85%D8%AE%D8%AA%D9%88%D9%85-%D8%A7%D9%84%D9%84%D8%AD%D9%85.jpg',
           'https://www.mmlakaty.com/وصفات/اكلات-رئيسيه/وصفات-لحوم/طريقة-عمل-مختوم-اللحم-الحجازي/'),
+          Meal(
+          1016,
+          'المعدوس الحجازي   ',
+          [101],
+          false,
+          true,
+          true,
+          false,
+          false,
+          false,
+          [
+            '  تمر هندي ',
+            ' بصل',
+            'ماء',
+            '  ملح',
+            'كمون ',
+            ' ثوم ',
+            ' أرز مصري ',
+            '  عدس  ',
+            ' كركم',
+            'فلفل أسود',
+            '  مرق دجاج',
+          ],
+          ['بصل للتزيين شرائح '],
+          'https://www.justfood.tv/UserFiles/ma3dous_source_jf_2.JPG',
+          'https://www.justfood.tv/وصفات/26993/طريقة-عمل-المعدوس-الحجازي'),
 
     ];
   }
