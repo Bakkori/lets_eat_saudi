@@ -67,7 +67,8 @@ class _MealInfoScreenState extends State<MealInfoScreen> {
                     physics: const NeverScrollableScrollPhysics(),
                     itemCount: widget.ingredients.length,
                     itemBuilder: (ctx, index) {
-                      return Center(child: Text(widget.ingredients[index]));
+                      return Center(
+                          child: Text(widget.ingredients[index].trim()));
                     })),
             Text(
               'الإضافات',
@@ -82,7 +83,7 @@ class _MealInfoScreenState extends State<MealInfoScreen> {
                     physics: const NeverScrollableScrollPhysics(),
                     itemCount: widget.addsOn.length,
                     itemBuilder: (ctx, index) {
-                      return Center(child: Text(widget.addsOn[index]));
+                      return Center(child: Text(widget.addsOn[index].trim()));
                     })),
             reviewListBuilder(widget.id, reviewsData),
             TextButton.icon(
