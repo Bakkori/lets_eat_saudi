@@ -512,7 +512,7 @@ class MealsData {
           false,
           true,
           true,
-          true,
+          false,
           false,
           true,
           [
