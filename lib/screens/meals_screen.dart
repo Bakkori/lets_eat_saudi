@@ -21,8 +21,9 @@ class _MealsScreenState extends State<MealsScreen> {
 
   @override
   void initState() {
-    // there will be list of categories, make a method to get the desired meals
-    // based on the category.
+    // This code will add the meals based on the selected category. Note that
+    // some meals belong to more than one category, that's why i made this
+    // inner loops
     for (var i = 0; i < mealsList.length; i++) {
       for (var j = 0; j < mealsList[i].categories.length; j++) {
         if (mealsList[i].categories[j] == widget.category_id) {
@@ -35,8 +36,6 @@ class _MealsScreenState extends State<MealsScreen> {
 
   @override
   Widget build(BuildContext context) {
-    // TO DO: create a function to make a list of meals for a specific category
-
     return Scaffold(
       backgroundColor: Theme.of(context).backgroundColor,
       appBar: AppBar(
