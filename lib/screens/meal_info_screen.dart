@@ -201,7 +201,7 @@ setButton(BuildContext context, String title, int setOption, int id) {
 }
 
 double calcListHeight(List list) {
-  return list.length * 30;
+  return (list.length * 20) + 20;
 }
 
 double calcReviewSectionHeight(List list) {
