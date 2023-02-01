@@ -381,6 +381,30 @@ class MealsData {
           'https://www.tareekaa.com/wp-content/uploads/2016/06/BK8VXmUCEAA5hvk.jpg',
           'https://www.youm7.com/story/2020/11/19/طريقة-عمل-المفطح-السعودى-بخطوات-بسيطة-من-كل-بلد-أكلة/5073040'),
 
+          ////القصيم
+           Meal(
+          1031,
+          'المراصيع ',
+          [103],
+          false,
+           true,
+          true,
+          false,
+          false,
+          true,
+          [
+            ' دقيق بر   ',
+            '    دقيق ابيض   ',
+            ' ماء   ',
+            '  ملح ',
+            ' بيكنج بودر   ',
+            '  حليب بودر   ',  
+          ],
+          ['  فستق'],
+          'https://img-global.cpcdn.com/recipes/b9800b572c360ab9/680x482cq70/%D8%A7%D9%84%D8%B5%D9%88%D8%B1%D8%A9-%D8%A7%D9%84%D8%B1%D8%A6%D9%8A%D8%B3%D9%8A%D8%A9-%D9%84%D9%88%D8%B5%D9%81%D8%A9%D9%85%D8%B5%D8%A7%D8%A8%D9%8A%D8%A8-%D8%A7%D9%88-%D9%85%D8%B1%D8%A7%D8%B5%D9%8A%D8%B9.webp',
+          'https://cookpad.com/sa/وصفات/16765043-مصابيب-او-مراصيع?ref=search&search_term=مراصيع'),
+          
+
 
 
 
