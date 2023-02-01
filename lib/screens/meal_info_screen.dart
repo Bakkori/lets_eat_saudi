@@ -143,6 +143,7 @@ class _MealInfoScreenState extends State<MealInfoScreen> {
 
   Container reviewListBuilder(int id, Reviews reviews) {
     double sizedBoxHeight = calcReviewSectionHeight(reviews.getReviews(id));
+    bool isEmpty = reviews.getReviews(id).isEmpty;
     return Container(
       height: sizedBoxHeight,
       color: Colors.black12,
@@ -154,18 +155,24 @@ class _MealInfoScreenState extends State<MealInfoScreen> {
             'التقييمات والآراء',
             style: TextStyle(fontWeight: FontWeight.bold),
           ),
-          Flexible(
-            child: ListView.builder(
-                physics: const NeverScrollableScrollPhysics(),
-                itemCount: reviews.getReviews(id).length,
-                itemBuilder: (ctx, index) {
-                  return ListTile(
-                    title: Text('5/4.7'),
-                    trailing:
-                        Text(reviews.getReviews(id).elementAt(index).review),
-                  );
-                }),
-          ),
+          (!isEmpty)
+              ? Flexible(
+                  child: ListView.builder(
+                      physics: const NeverScrollableScrollPhysics(),
+                      itemCount: reviews.getReviews(id).length,
+                      itemBuilder: (ctx, index) {
+                        return ListTile(
+                          title: Text('5/...'),
+                          trailing: Text(
+                              reviews.getReviews(id).elementAt(index).review),
+                        );
+                      }),
+                )
+              : Flexible(
+                  child: Center(
+                    child: Text('لا توجد تقييمات بعد'),
+                  ),
+                ),
         ],
       ),
     );
@@ -205,6 +212,9 @@ double calcListHeight(List list) {
 }
 
 double calcReviewSectionHeight(List list) {
+  if (list.isEmpty) {
+    return 60;
+  }
   return (list.length * 60) + 40;
 }
 
