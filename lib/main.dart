@@ -24,6 +24,9 @@ class LetsEatSaudi extends StatelessWidget {
             //  androidOverscrollIndicator: AndroidOverscrollIndicator.stretch,
             backgroundColor: backgroundColor,
             splashColor: secondaryColor,
+            inputDecorationTheme: InputDecorationTheme(
+                focusedBorder: OutlineInputBorder(
+                    borderSide: BorderSide(color: Colors.black))),
             appBarTheme: const AppBarTheme(
               foregroundColor: secondaryColor,
               centerTitle: true,
