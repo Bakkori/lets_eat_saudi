@@ -36,7 +36,7 @@ class _MealItemState extends State<MealItem> {
             child: Container(
               child: Center(
                   child: Text(
-                widget.name,
+                widget.name.trim(),
                 style:
                     const TextStyle(fontSize: 15, fontWeight: FontWeight.w600),
               )),
