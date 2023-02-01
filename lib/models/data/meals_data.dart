@@ -228,7 +228,7 @@ class MealsData {
           false,
           true,
           false,
-          false,
+          true,
           [
             ' الكركم ',
             ' الكزبرة  ',
