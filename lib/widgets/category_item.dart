@@ -21,6 +21,7 @@ class CategoryItem extends StatelessWidget {
         }));
       },
       child: Stack(
+        alignment: Alignment.center,
         children: [
           Container(
             child: ClipRRect(
@@ -35,15 +36,13 @@ class CategoryItem extends StatelessWidget {
             ),
             padding: const EdgeInsets.only(bottom: 10),
           ),
-          Positioned(
-            child: Center(
-              child: Text(
-                name,
-                style: const TextStyle(
-                    fontSize: 22,
-                    fontWeight: FontWeight.bold,
-                    color: Colors.white70),
-              ),
+          Center(
+            child: Text(
+              name,
+              style: const TextStyle(
+                  fontSize: 22,
+                  fontWeight: FontWeight.bold,
+                  color: Colors.white70),
             ),
           )
         ],
