@@ -504,6 +504,57 @@ class MealsData {
           ['الكزبرة'],
           'https://kitchen.sayidaty.net/uploads/small/69/69356df8cee3ccaa70e33026bc526fc8_w750_h500.jpg',
           'https://al-ain.com/article/saudi-groats-meat-chicken'),
+          //////////////////////////////////////////////////////////////////////
+              Meal(
+          1035,
+          ' الكليجا',
+          [103],
+          false,
+          true,
+          true,
+          false,
+          false,
+          true,
+          [
+            '  دقيق أبيض  ',
+            ' دقيق أسمر  ',
+            'سمن ',
+            '  حليب بودرة ',
+            'الزبدة   ',
+            '  سكر  ',
+            'كركم   ',
+            ' ملح ',
+            ' الماء ',
+            'قرفة مطحونة',
+          ],
+          ['عسل'],
+          'https://kitchen.sayidaty.net/uploads/small/e7/e711cb0301e7b779f7c8ccd7bb7dc2fb_w750_h500.jpg',
+          'https://www.mmlakaty.com/وصفات/طريقة-عمل-الكليجا/'),
+          //////////////////////////////////////////////////////////////////////
+          Meal(
+          1036,
+          ' الحنيني',
+          [103],
+          true,
+          true,
+          false,
+          false,
+          false,
+          true,
+          [
+            '  التمر   ',
+            ' دقيق   ',
+            'سمن ',
+            '   رقائق الذرة ',
+            'الزبدة   ',
+            '  السمسم المحمص  ',
+            'الهيل   ',
+            'قرفة مطحونة',
+          ],
+          ['عسل'],
+          'https://modo3.com/thumbs/fit630x300/89146/1477215696/%D8%B7%D8%B1%D9%8A%D9%82%D8%A9_%D8%A7%D9%84%D8%AD%D9%86%D9%8A%D9%86%D9%8A.jpg',
+          'https://mawdoo3.com/طريقة_عمل_الحنيني'),
+          
 
 
 
