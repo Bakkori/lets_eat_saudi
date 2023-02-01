@@ -504,6 +504,32 @@ class MealsData {
           ['الكزبرة'],
           'https://kitchen.sayidaty.net/uploads/small/69/69356df8cee3ccaa70e33026bc526fc8_w750_h500.jpg',
           'https://al-ain.com/article/saudi-groats-meat-chicken'),
+          //////////////////////////////////////////////////////////////////////
+              Meal(
+          1035,
+          ' الكليجا',
+          [103],
+          false,
+          true,
+          true,
+          true,
+          false,
+          true,
+          [
+            '  دقيق أبيض  ',
+            ' دقيق أسمر  ',
+            'سمن ',
+            '  حليب بودرة ',
+            'الزبدة   ',
+            '  سكر  ',
+            'كركم   ',
+            ' ملح ',
+            ' الماء ',
+            'قرفة مطحونة',
+          ],
+          ['عسل'],
+          'https://kitchen.sayidaty.net/uploads/small/e7/e711cb0301e7b779f7c8ccd7bb7dc2fb_w750_h500.jpg',
+          'https://www.mmlakaty.com/وصفات/طريقة-عمل-الكليجا/'),
 
 
 
