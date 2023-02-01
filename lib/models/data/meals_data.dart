@@ -3,6 +3,7 @@ import 'package:lets_eat_saudi/models/meals.dart';
 class MealsData {
   get mealsData {
     return [
+      //حجازي
       Meal(
           1011,
           'المعصوب',
@@ -178,6 +179,39 @@ class MealsData {
           [' مشمش'],
           'https://kitchen.sayidaty.net/uploads/node/DEEBAZA.jpg',
           'https://kitchen.sayidaty.net/node/3317/الدبيازة-السعودية-..-حلا-العيد-التقليدي/حلويات/وصفات-رمضانية'),
+         
+          //نجدي
+          Meal(
+          1021,
+          'الكبسة  ',
+          [102],
+          false,
+          false,
+          false,
+          true,
+          false,
+          false,
+          [
+            ' دجاج ',
+            ' أرز بسمتي',
+            'طماطم',
+            '  بصل',
+            'فلفل حار ',
+            '  ثوم',
+            'زيت ',
+            ' ملح ',
+            ' قرفة ',
+            'قرنفل',
+            '  كمون',
+            'ورق لورا  ',
+            '  حبهان',
+            'بهارات صينية ',
+            '  ماء ',
+            ' مرقة دجاج  ',
+          ],
+          ['الفستق '],
+          'https://static.webteb.net/images/content/ramadanrecipe_recipe_567_8506d5779ec-afd8-4183-a31f-69631ebf728a.jpg',
+          'https://cookpad.com/sa/وصفات/508613-طريقة-عمل-الكبسة-السعودي-بالدجاج'),
 
 
     ];
