@@ -124,6 +124,8 @@ class _MealInfoScreenState extends State<MealInfoScreen> {
               title: const Text('أكتب تقيمك'),
               content: TextField(
                 autofocus: true,
+                cursorColor: Colors.black,
+                textDirection: TextDirection.rtl,
                 controller: review,
                 onSubmitted: ((value) {
                   sumbit();
@@ -168,7 +170,7 @@ class _MealInfoScreenState extends State<MealInfoScreen> {
                         );
                       }),
                 )
-              : Flexible(
+              : const Flexible(
                   child: Center(
                     child: Text('لا توجد تقييمات بعد'),
                   ),
