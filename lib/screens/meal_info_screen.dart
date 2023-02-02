@@ -1,13 +1,9 @@
-import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/rendering.dart';
-import 'package:flutter/services.dart';
 import 'package:lets_eat_saudi/models/data/reviews.dart';
-import 'package:lets_eat_saudi/models/review.dart';
 import 'package:lets_eat_saudi/screens/allergies_sheet.dart';
 import 'package:lets_eat_saudi/screens/diet_sheet.dart';
 import 'package:provider/provider.dart';
-import 'package:shared_preferences/shared_preferences.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class MealInfoScreen extends StatefulWidget {
   const MealInfoScreen(
@@ -16,19 +12,30 @@ class MealInfoScreen extends StatefulWidget {
       required this.imageUrl,
       required this.ingredients,
       required this.addsOn,
-      required this.id})
+      required this.id,
+      required this.source})
       : super(key: key);
   final int id;
   final String mealName;
   final String imageUrl;
   final List<String> ingredients;
   final List<String> addsOn;
+  final String source;
 
   @override
   State<MealInfoScreen> createState() => _MealInfoScreenState();
 }
 
 class _MealInfoScreenState extends State<MealInfoScreen> {
+  Future<void> _openUrl(String url) async {
+    final uri = Uri.parse(url);
+    if (!await canLaunch(url)) {
+      await launch(url);
+    } else {
+      throw 'Could not open $url';
+    }
+  }
+
   @override
   @override
   Widget build(BuildContext context) {
@@ -37,6 +44,19 @@ class _MealInfoScreenState extends State<MealInfoScreen> {
       backgroundColor: Theme.of(context).backgroundColor,
       appBar: AppBar(
         title: Text(widget.mealName),
+        actions: [
+          PopupMenuButton(
+              itemBuilder: (_) => [
+                    PopupMenuItem(
+                      child: Text('اذهب إلى مصدر المعلومات'),
+                      onTap: () => _openUrl(widget.source),
+                    ),
+                    PopupMenuItem(
+                      child: Text('اذهب إلى مصدر الصورة'),
+                      onTap: () => _openUrl(widget.imageUrl),
+                    ),
+                  ])
+        ],
       ),
       body: SingleChildScrollView(
         child: Column(

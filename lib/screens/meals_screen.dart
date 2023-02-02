@@ -59,6 +59,7 @@ class _MealsScreenState extends State<MealsScreen> {
                         imageUrl: meals[index].imageUrl,
                         ingredients: meals[index].ingredients,
                         addsOn: meals[index].addsOn,
+                        source: meals[index].source,
                       );
                     }));
                   },
