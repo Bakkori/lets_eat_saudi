@@ -4,6 +4,7 @@ import 'package:lets_eat_saudi/screens/allergies_sheet.dart';
 import 'package:lets_eat_saudi/screens/diet_sheet.dart';
 import 'package:provider/provider.dart';
 import 'package:url_launcher/url_launcher.dart';
+import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 
 class MealInfoScreen extends StatefulWidget {
   const MealInfoScreen(
@@ -130,37 +131,52 @@ class _MealInfoScreenState extends State<MealInfoScreen> {
   Future<String?> showReviewSection(
       BuildContext context, int id, Reviews reviews) {
     TextEditingController review = TextEditingController();
+    double rating = 0;
     void sumbit() {
       setState(() {
-        reviews.addReviw(review.text, id);
+        reviews.addReviw(review.text, id, rating);
         Navigator.of(context).pop();
       });
     }
 
     return showDialog<String?>(
         context: context,
-        builder: ((context) => AlertDialog(
-              backgroundColor: Theme.of(context).backgroundColor,
-              title: const Text('أكتب تقيمك'),
-              content: TextField(
-                autofocus: true,
-                cursorColor: Colors.black,
-                textDirection: TextDirection.rtl,
-                controller: review,
-                onSubmitted: ((value) {
-                  sumbit();
-                  reviews.printRev();
-                }),
+        builder: ((context) {
+          return AlertDialog(
+            backgroundColor: Theme.of(context).backgroundColor,
+            title: const Text('أكتب تقيمك'),
+            content: SizedBox(
+              height: 300,
+              child: Column(
+                children: [
+                  // Implement the code of rating bar here <------------------
+                  // onRatingUpdate: value must be assigned to rating var
+                  const SizedBox(
+                    height: 10,
+                  ),
+                  TextField(
+                    autofocus: true,
+                    cursorColor: Colors.black,
+                    textDirection: TextDirection.rtl,
+                    controller: review,
+                    onSubmitted: ((value) {
+                      sumbit();
+                      reviews.printRev();
+                    }),
+                  ),
+                ],
               ),
-              actions: [
-                TextButton(
-                    child: Text(
-                      'تم',
-                      style: TextStyle(color: Theme.of(context).splashColor),
-                    ),
-                    onPressed: sumbit),
-              ],
-            )));
+            ),
+            actions: [
+              TextButton(
+                  child: Text(
+                    'تم',
+                    style: TextStyle(color: Theme.of(context).splashColor),
+                  ),
+                  onPressed: sumbit),
+            ],
+          );
+        }));
   }
 
   Container reviewListBuilder(int id, Reviews reviews) {
@@ -184,7 +200,8 @@ class _MealInfoScreenState extends State<MealInfoScreen> {
                       itemCount: reviews.getReviews(id).length,
                       itemBuilder: (ctx, index) {
                         return ListTile(
-                          title: Text('5/...'),
+                          title: Text(
+                              '${reviews.getReviews(id).elementAt(index).rating}'),
                           trailing: Text(
                               reviews.getReviews(id).elementAt(index).review),
                         );
