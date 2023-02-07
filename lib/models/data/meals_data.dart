@@ -584,7 +584,39 @@ class MealsData {
           'https://cdn.salla.sa/BGbn/Ecpvy4A2SdqI5dmx2EnFsgSOhvdlKTx14Hh3MmnD.jpg',
           'https://www.atyabtabkha.com/recipe/طبخ-الرز-الحساوي-2965297'),
          ///////////////////////////////////////////////////////////////////////
-         
+          Meal(
+          1042,
+          ' المكبوس ',
+          [104],
+          false,
+          false,
+          false,
+          true,
+          false,
+          true,
+          [
+            '  دجاج   ',
+            ' بصل   ',
+            'جزر ',
+            '   ملح  ',
+            'بهارات عربية   ',
+            '   أرز بسمتي ',
+            'زيت نباتي   ',
+            ' ثوم',
+             '  طماطم   ',
+            '   فلفل اسود ',
+            'معجون طماطم    ',
+            '   قرفة  ',
+            'سمن  ',
+            'زنجبيل طازج     ',
+            '   لومي  ',
+            'هيل  ',
+            'قرنفل  ',
+            'كركم  ',
+          ],
+          ['ماء ورد'],
+          'https://www.thaqfny.com/wp-content/uploads/2021/03/%D8%A7%D9%84%D9%85%D9%83%D8%A8%D9%88%D8%B3.jpg',
+          'https://www.atyabtabkha.com/recipe/طريقة-عمل-مكبوس-الدجاج-1588761'),
 
 
 
