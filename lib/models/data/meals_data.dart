@@ -617,6 +617,31 @@ class MealsData {
           ['ماء ورد'],
           'https://www.thaqfny.com/wp-content/uploads/2021/03/%D8%A7%D9%84%D9%85%D9%83%D8%A8%D9%88%D8%B3.jpg',
           'https://www.atyabtabkha.com/recipe/طريقة-عمل-مكبوس-الدجاج-1588761'),
+          //////////////////////////////////////////////////////////////////////
+          Meal(
+          1043,
+          ' بلاليط ',
+          [104],
+          false,
+          true,
+          false,
+          false,
+          true,
+          true,
+          [
+            '  شعيرية   ',
+            ' بيض   ',
+            'سكر ',
+            '   زيت نباتي  ',
+            'هيل مطحون    ',
+            '   أرز بسمتي ',
+            'زبدة    ',
+            '  فلفل اسود',
+            '  ملح ',
+          ],
+          ['زعفران منقوع بماء الورد'],
+          'https://www.taabkh.com/files/styles/recipe/public/recipe/2020/11/Balaleet-Omelette.jpg',
+          'https://cookpad.com/sa/وصفات/16285747-بلاليط?ref=search&search_term=بلاليط'),
 
 
 
