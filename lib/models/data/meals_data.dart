@@ -665,6 +665,29 @@ class MealsData {
           ['مكسرات '],
           'https://cdn.sotor.com/thumbs/fit630x300/23701/1554109694/%D8%B7%D8%B1%D9%8A%D9%82%D8%A9_%D8%B9%D9%85%D9%84_%D8%A7%D9%84%D8%B3%D8%A7%D9%82%D9%88.jpg',
           'https://cookpad.com/sa/وصفات/16134803-الساقو?ref=search&search_term=طريقة%20الساقو'),
+          ////////جنوب المملكة
+           Meal(
+          1051,
+          ' العريكة ',
+          [105],
+          true,
+          true,
+          false,
+          false,
+          false,
+          true,
+          [
+            '   دقيق بر   ',
+            '  دقيق ابيض   ',
+            ' ملح ',
+            '   ماء   ',
+            'تمر     ',
+            '   سمن   ',
+            'خلاصة السمن    ',
+          ],
+          ['عسل '],
+          'https://img-global.cpcdn.com/recipes/8dd8b39bb7e85ac0/400x400cq70/photo.jpg',
+          'https://cookpad.com/sa/وصفات/16743915-العريكه-الجنوبيه?ref=search&search_term=عريكه'),
 
 
 
