@@ -575,8 +575,6 @@ class MealsData {
             'زيت نباتي   ',
             ' ثوم',
              '  طماطم   ',
-            ' بصل   ',
-            'جزر ',
             '   فلفل  ',
             'معجون طماطم    ',
             '   قرفة  ',
@@ -585,7 +583,8 @@ class MealsData {
           ['فستق'],
           'https://cdn.salla.sa/BGbn/Ecpvy4A2SdqI5dmx2EnFsgSOhvdlKTx14Hh3MmnD.jpg',
           'https://www.atyabtabkha.com/recipe/طبخ-الرز-الحساوي-2965297'),
-
+         ///////////////////////////////////////////////////////////////////////
+         
 
 
 
