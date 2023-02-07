@@ -801,6 +801,29 @@ class MealsData {
           ['كاجو '],
           'https://aau.ac.ae/uploads/editor/source/-.jpg',
           'https://cookpad.com/sa/وصفات/12580340-منسف-اهل-الشمال-تبوك?ref=search&search_term=منسف%20تبوك'),
+          //////////////////////////////////////////////////////////////////////
+           Meal(
+          1062,
+          ' المفروكة   ',
+          [106],
+          false,
+          true,
+          true,
+          false,
+          false,
+          true,
+          [
+            '   طحين بر    ',
+            ' حليب بودرة   ',
+            '   ماء دافي    ',
+            '   زيت زيتون     ',
+            ' فلفل اسود مطحون    ',
+            '   ملح    ',
+            'بهارات مشكله       ',
+          ],
+          [' تمر'],
+          'https://pbs.twimg.com/media/EV5CEDgWAAUMuq1.jpg',
+          'https://cookpad.com/sa/وصفات/15445570-مفروك?ref=search&search_term=مفروك'),
     ];
   }
 }
