@@ -642,6 +642,29 @@ class MealsData {
           ['زعفران منقوع بماء الورد'],
           'https://www.taabkh.com/files/styles/recipe/public/recipe/2020/11/Balaleet-Omelette.jpg',
           'https://cookpad.com/sa/وصفات/16285747-بلاليط?ref=search&search_term=بلاليط'),
+          //////////////////////////////////////////////////////////////////////
+           Meal(
+          1044,
+          ' ساقو ',
+          [104],
+          true,
+          true,
+          false,
+          false,
+          false,
+          false,
+          [
+            '  ساقو   ',
+            '  ماء   ',
+            'سكر ',
+            '   هيل   ',
+            'هيل مطحون    ',
+            '   زعفران مطحون  ',
+            'سمن    ',
+          ],
+          ['مكسرات '],
+          'https://cdn.sotor.com/thumbs/fit630x300/23701/1554109694/%D8%B7%D8%B1%D9%8A%D9%82%D8%A9_%D8%B9%D9%85%D9%84_%D8%A7%D9%84%D8%B3%D8%A7%D9%82%D9%88.jpg',
+          'https://cookpad.com/sa/وصفات/16134803-الساقو?ref=search&search_term=طريقة%20الساقو'),
 
 
 
