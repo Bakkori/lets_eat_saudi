@@ -747,6 +747,33 @@ class MealsData {
           ['عسل وتمر'],
           'http://photos.encyclopediacooking.com/image/recipes_pictures%D8%B7%D8%B1%D9%8A%D9%82%D8%A9-%D8%B9%D8%B5%D9%8A%D8%AF%D8%A9-%D8%A7%D9%84%D8%AA%D9%85%D8%B1-%D9%85%D9%86-%D9%88%D8%B5%D9%81%D8%A7%D8%AA-%D9%88%D8%B7%D8%A8%D8%AE%D8%A7%D8%AA-%D9%85%D9%87%D8%A7-%D8%A7%D9%84%D8%B5%D9%8A%D8%B9%D8%B1%D9%8A.jpg',
           'https://cookpad.com/sa/وصفات/16742505-عصيده?ref=search&search_term=العصيدة'),
+          //////////////////////////////////////////////////////////////////////
+             Meal(
+          1054,
+          ' المحشوش  ',
+          [105],
+          false,
+          false,
+          false,
+          true,
+          false,
+          false,
+          [
+            '   اللحم الضأن    ',
+            ' لحم بعظم  ',
+            '   شحم   ',
+            'بصل  ',
+            '   هيل    ',
+            'قرفة     ',
+             '   ملح    ',
+            'فلفل أسود      ',
+               'فلفل أحمر حار     ',
+             '   كمون    ',
+            'كركم       ',
+          ],
+          ['خس '],
+          'https://www.supermama.me/system/App/Models/Recipe/images/000/111/497/watermarked/%D8%A7%D9%84%D9%85%D8%AD%D8%B4%D9%88%D8%B4-%D8%A7%D9%84%D8%AC%D9%8A%D8%B2%D8%A7%D9%86%D9%8A.jpg',
+          'https://www.tareekaa.com/طبق-اليوم/اكلات-لحم/63607-طريقة-عمل-المحشوش-الجيزاني'),
     ];
   }
 }
