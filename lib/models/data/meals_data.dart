@@ -554,7 +554,37 @@ class MealsData {
           ['عسل'],
           'https://modo3.com/thumbs/fit630x300/89146/1477215696/%D8%B7%D8%B1%D9%8A%D9%82%D8%A9_%D8%A7%D9%84%D8%AD%D9%86%D9%8A%D9%86%D9%8A.jpg',
           'https://mawdoo3.com/طريقة_عمل_الحنيني'),
-          
+          ////المنطقة الشرقية
+             Meal(
+          1041,
+          ' الأرز الحساوي',
+          [104],
+          false,
+          false,
+          false,
+          true,
+          false,
+          true,
+          [
+            '  دجاج   ',
+            ' بصل   ',
+            'جزر ',
+            '   ملح  ',
+            'بهارات عربية   ',
+            '   أرز  ',
+            'زيت نباتي   ',
+            ' ثوم',
+             '  طماطم   ',
+            ' بصل   ',
+            'جزر ',
+            '   فلفل  ',
+            'معجون طماطم    ',
+            '   قرفة  ',
+            'سمن  ',
+          ],
+          ['فستق'],
+          'https://cdn.salla.sa/BGbn/Ecpvy4A2SdqI5dmx2EnFsgSOhvdlKTx14Hh3MmnD.jpg',
+          'https://www.atyabtabkha.com/recipe/طبخ-الرز-الحساوي-2965297'),
 
 
 
