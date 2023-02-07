@@ -723,6 +723,30 @@ class MealsData {
           ['عسل '],
           'https://menu360.me/wp-content/uploads/2021/08/0Y2A9989.jpg',
           'https://cookpad.com/sa/وصفات/16350243-المرسه-الجيزانية?ref=search&search_term=المرسى'),
+          //////////////////////////////////////////////////////////////////////
+            Meal(
+          1053,
+          ' عصيدة  ',
+          [105],
+          true,
+          true,
+          true,
+          false,
+          false,
+          true,
+          [
+            '   دقيق    ',
+            ' حليب بودرة ',
+            '   سكر   ',
+            'ماء     ',
+            '   زبدة    ',
+            'الزعفران     ',
+             '   الهيل    ',
+            'ماء ورد     ',
+          ],
+          ['عسل وتمر'],
+          'http://photos.encyclopediacooking.com/image/recipes_pictures%D8%B7%D8%B1%D9%8A%D9%82%D8%A9-%D8%B9%D8%B5%D9%8A%D8%AF%D8%A9-%D8%A7%D9%84%D8%AA%D9%85%D8%B1-%D9%85%D9%86-%D9%88%D8%B5%D9%81%D8%A7%D8%AA-%D9%88%D8%B7%D8%A8%D8%AE%D8%A7%D8%AA-%D9%85%D9%87%D8%A7-%D8%A7%D9%84%D8%B5%D9%8A%D8%B9%D8%B1%D9%8A.jpg',
+          'https://cookpad.com/sa/وصفات/16742505-عصيده?ref=search&search_term=العصيدة'),
     ];
   }
 }
