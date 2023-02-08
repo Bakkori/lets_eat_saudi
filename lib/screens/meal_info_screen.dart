@@ -38,7 +38,6 @@ class _MealInfoScreenState extends State<MealInfoScreen> {
   }
 
   @override
-  @override
   Widget build(BuildContext context) {
     final reviewsData = Provider.of<Reviews>(context);
     return Scaffold(
@@ -144,27 +143,25 @@ class _MealInfoScreenState extends State<MealInfoScreen> {
         builder: ((context) {
           return AlertDialog(
             backgroundColor: Theme.of(context).backgroundColor,
-            title: const Text('أكتب تقيمك'),
+            title: const Text('أخبرنا عن رأيك'),
             content: SizedBox(
               height: 300,
               child: Column(
                 children: [
-         
-            const SizedBox(height: 30),
-            const Text('التقيم'),
-            RatingBar.builder(
-              itemCount: 5,
-              initialRating: 1,
-              minRating: 1,
-              allowHalfRating: true,
-              direction: Axis.horizontal,
-              itemPadding: const EdgeInsets.symmetric(horizontal: 8),
-              itemBuilder: (context, index) =>
-                  const Icon(Icons.star, color: Colors.amber),
-              onRatingUpdate: (value) {
-                rating=value;
-              },
-            ),
+                  const SizedBox(height: 30),
+                  RatingBar.builder(
+                    itemCount: 5,
+                    initialRating: 1,
+                    minRating: 1,
+                    allowHalfRating: true,
+                    direction: Axis.horizontal,
+                    itemPadding: const EdgeInsets.symmetric(horizontal: 3),
+                    itemBuilder: (context, index) =>
+                        const Icon(Icons.star, color: Colors.amber),
+                    onRatingUpdate: (value) {
+                      rating = value;
+                    },
+                  ),
                   const SizedBox(
                     height: 20,
                   ),
@@ -173,6 +170,10 @@ class _MealInfoScreenState extends State<MealInfoScreen> {
                     cursorColor: Colors.black,
                     textDirection: TextDirection.rtl,
                     controller: review,
+                    decoration: InputDecoration(
+                        labelText: 'المراجعة',
+                        labelStyle:
+                            TextStyle(color: Theme.of(context).splashColor)),
                     onSubmitted: ((value) {
                       sumbit();
                       reviews.printRev();
