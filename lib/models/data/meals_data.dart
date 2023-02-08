@@ -682,7 +682,7 @@ class MealsData {
       Meal(
           1051,
           ' العريكة ',
-          [105],
+          [106],
           true,
           true,
           false,
@@ -705,7 +705,7 @@ class MealsData {
       Meal(
           1052,
           ' المرسه  ',
-          [105],
+          [106],
           true,
           true,
           false,
@@ -727,7 +727,7 @@ class MealsData {
       Meal(
           1053,
           ' عصيدة  ',
-          [105],
+          [106],
           true,
           true,
           true,
@@ -751,7 +751,7 @@ class MealsData {
       Meal(
           1054,
           ' المحشوش  ',
-          [105],
+          [106],
           false,
           false,
           false,
@@ -778,7 +778,7 @@ class MealsData {
       Meal(
           1061,
           ' منسف   ',
-          [106],
+          [105],
           false,
           false,
           true,
@@ -801,11 +801,11 @@ class MealsData {
           ['كاجو '],
           'https://aau.ac.ae/uploads/editor/source/-.jpg',
           'https://cookpad.com/sa/وصفات/12580340-منسف-اهل-الشمال-تبوك?ref=search&search_term=منسف%20تبوك'),
-          //////////////////////////////////////////////////////////////////////
-           Meal(
+      //////////////////////////////////////////////////////////////////////
+      Meal(
           1062,
           ' المفروكة   ',
-          [106],
+          [105],
           false,
           true,
           true,
@@ -824,11 +824,11 @@ class MealsData {
           [' تمر'],
           'https://pbs.twimg.com/media/EV5CEDgWAAUMuq1.jpg',
           'https://cookpad.com/sa/وصفات/15445570-مفروك?ref=search&search_term=مفروك'),
-          //////////////////////////////////////////////////////////////////////
-             Meal(
+      //////////////////////////////////////////////////////////////////////
+      Meal(
           1063,
           ' الفتة    ',
-          [106],
+          [105],
           false,
           true,
           true,
@@ -845,18 +845,18 @@ class MealsData {
             '   الباذنجان     ',
             '   خبز رقيق مفرود      ',
             ' لبن الزبادي      ',
-             '    المايونيز       ',
+            '    المايونيز       ',
             '  عصير الليمون     ',
             '    الثوم المفروم     ',
           ],
           ['بقدونس  '],
           'https://www.alrakia.com/wp-content/uploads/2021/01/%D8%B7%D8%B1%D9%8A%D9%82%D8%A9_%D8%B3%D9%84%D8%B7%D8%A9_%D8%A7%D9%84%D9%81%D8%AA%D8%A9.jpg',
           'https://www.alrakia.com/198950-طريقة-عمل-الفتة-السعودية/'),
-         ///////////////////////////////////////////////////////////////////////
-          Meal(
+      ///////////////////////////////////////////////////////////////////////
+      Meal(
           1064,
           ' الخميعه     ',
-          [106],
+          [105],
           false,
           true,
           true,
@@ -872,7 +872,6 @@ class MealsData {
           ['سكر اضافي وقت التقديم  '],
           'http://photos.encyclopediacooking.com/image/recipes_pictures%D8%A7%D9%83%D9%84%D8%A9-%D8%A7%D9%84%D8%AE%D9%85%D9%8A%D8%B9%D8%A9-%D8%A7%D9%84%D8%B4%D8%B9%D8%A8%D9%8A%D8%A9-%D8%A7%D9%84%D8%A8%D8%AF%D9%88%D9%8A%D8%A9-%D8%A7%D9%84%D8%B9%D9%86%D8%B2%D9%8A%D9%87-%D8%A7%D9%84%D8%B4%D9%85%D8%A7%D9%84%D9%8A%D9%87-%D9%88%D8%A7%D9%84%D8%B9%D8%B1%D8%A7%D9%82%D9%8A%D8%A9-%D9%88-%D8%A7%D9%84%D8%A3%D8%B1%D8%AF%D9%86%D9%8A%D8%A9.jpg',
           'https://recipes.qassimy.com/طريقة-الخميعه-الشماليه/'),
-         
     ];
   }
 }
