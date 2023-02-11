@@ -28,6 +28,11 @@ class _MealItemState extends State<MealItem> {
                 height: 120,
                 width: 150,
                 fit: BoxFit.cover,
+                loadingBuilder: (context, child, loadingProgress) {
+                  return loadingProgress == null
+                      ? child
+                      : CircularProgressIndicator();
+                },
               )),
           ClipRRect(
             borderRadius: const BorderRadius.only(
