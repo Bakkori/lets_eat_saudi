@@ -149,22 +149,21 @@ class _MealInfoScreenState extends State<MealInfoScreen> {
               height: 300,
               child: Column(
                 children: [
-         
-            const SizedBox(height: 30),
-            const Text('التقيم'),
-            RatingBar.builder(
-              itemCount: 5,
-              initialRating: 1,
-              minRating: 1,
-              allowHalfRating: true,
-              direction: Axis.horizontal,
-              itemPadding: const EdgeInsets.symmetric(horizontal: 8),
-              itemBuilder: (context, index) =>
-                  const Icon(Icons.star, color: Colors.amber),
-              onRatingUpdate: (value) {
-                rating=value;
-              },
-            ),
+                  const SizedBox(height: 30),
+                  const Text('التقيم'),
+                  RatingBar.builder(
+                    itemCount: 5,
+                    initialRating: 1,
+                    minRating: 1,
+                    allowHalfRating: true,
+                    direction: Axis.horizontal,
+                    itemPadding: const EdgeInsets.symmetric(horizontal: 3),
+                    itemBuilder: (context, index) =>
+                        const Icon(Icons.star, color: Colors.amber),
+                    onRatingUpdate: (value) {
+                      rating = value;
+                    },
+                  ),
                   const SizedBox(
                     height: 20,
                   ),
