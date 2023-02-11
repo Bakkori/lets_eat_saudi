@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:lets_eat_saudi/models/data/reviews.dart';
 import 'package:lets_eat_saudi/screens/categories_screen.dart';
+import 'package:lets_eat_saudi/screens/favorites_screen.dart';
+import 'package:lets_eat_saudi/widgets/favorite_item.dart';
 import 'package:provider/provider.dart';
 
 void main() {
