@@ -34,7 +34,10 @@ class _MealItemState extends State<MealItem> {
                       : Container(
                           margin: EdgeInsets.all(15),
                           padding: EdgeInsets.all(15),
-                          child: CircularProgressIndicator());
+                          child: CircularProgressIndicator(
+                            semanticsLabel: 'Loading',
+                            color: Theme.of(context).splashColor,
+                          ));
                 },
               )),
           ClipRRect(
