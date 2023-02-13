@@ -31,7 +31,10 @@ class _MealItemState extends State<MealItem> {
                 loadingBuilder: (context, child, loadingProgress) {
                   return loadingProgress == null
                       ? child
-                      : CircularProgressIndicator();
+                      : Container(
+                          margin: EdgeInsets.all(15),
+                          padding: EdgeInsets.all(15),
+                          child: CircularProgressIndicator());
                 },
               )),
           ClipRRect(
