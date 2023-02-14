@@ -38,7 +38,6 @@ class _MealInfoScreenState extends State<MealInfoScreen> {
   }
 
   @override
-  @override
   Widget build(BuildContext context) {
     final reviewsData = Provider.of<Reviews>(context);
     return Scaffold(
@@ -144,13 +143,12 @@ class _MealInfoScreenState extends State<MealInfoScreen> {
         builder: ((context) {
           return AlertDialog(
             backgroundColor: Theme.of(context).backgroundColor,
-            title: const Text('أكتب تقيمك'),
+            title: const Text('أخبرنا عن رأيك'),
             content: SizedBox(
               height: 300,
               child: Column(
                 children: [
                   const SizedBox(height: 30),
-                  const Text('التقيم'),
                   RatingBar.builder(
                     itemCount: 5,
                     initialRating: 1,
@@ -172,6 +170,10 @@ class _MealInfoScreenState extends State<MealInfoScreen> {
                     cursorColor: Colors.black,
                     textDirection: TextDirection.rtl,
                     controller: review,
+                    decoration: InputDecoration(
+                        labelText: 'المراجعة',
+                        labelStyle:
+                            TextStyle(color: Theme.of(context).splashColor)),
                     onSubmitted: ((value) {
                       sumbit();
                       reviews.printRev();
