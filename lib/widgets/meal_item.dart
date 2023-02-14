@@ -28,6 +28,12 @@ class _MealItemState extends State<MealItem> {
                 height: 120,
                 width: 150,
                 fit: BoxFit.cover,
+                errorBuilder: (context, error, stackTrace) {
+                  return Container(
+                      height: 100,
+                      width: 100,
+                      child: Center(child: Text('Could not load image!')));
+                },
                 loadingBuilder: (context, child, loadingProgress) {
                   return loadingProgress == null
                       ? child
