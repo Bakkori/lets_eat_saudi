@@ -105,7 +105,7 @@ class _MealInfoScreenState extends State<MealInfoScreen> {
                     itemBuilder: (ctx, index) {
                       return Center(child: Text(widget.addsOn[index].trim()));
                     })),
-            reviewListBuilder(widget.id, reviewsData),
+            reviewsListBuilder(widget.id, reviewsData),
             TextButton.icon(
               style: ButtonStyle(
                   overlayColor: MaterialStateProperty.all(Colors.black12),
@@ -194,7 +194,7 @@ class _MealInfoScreenState extends State<MealInfoScreen> {
         }));
   }
 
-  Container reviewListBuilder(int id, Reviews reviews) {
+  Container reviewsListBuilder(int id, Reviews reviews) {
     double sizedBoxHeight = calcReviewSectionHeight(reviews.getReviews(id));
     bool isEmpty = reviews.getReviews(id).isEmpty;
     return Container(

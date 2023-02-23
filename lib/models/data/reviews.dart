@@ -21,10 +21,4 @@ class Reviews with ChangeNotifier {
     _reviews.add(Review(review, mealId, rating));
     notifyListeners();
   }
-
-  printRev() {
-    for (var i = 0; i < _reviews.length; i++) {
-      print(_reviews[i].review);
-    }
-  }
 }
