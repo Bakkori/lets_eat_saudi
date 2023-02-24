@@ -105,7 +105,7 @@ class _MealInfoScreenState extends State<MealInfoScreen> {
                     itemBuilder: (ctx, index) {
                       return Center(child: Text(widget.addsOn[index].trim()));
                     })),
-            reviewsListBuilder(widget.id, reviewsData),
+            ReviewsList(id: widget.id, reviews: reviewsData),
             TextButton.icon(
               style: ButtonStyle(
                   overlayColor: MaterialStateProperty.all(Colors.black12),
@@ -131,12 +131,6 @@ class _MealInfoScreenState extends State<MealInfoScreen> {
       BuildContext context, int id, Reviews reviews) {
     TextEditingController review = TextEditingController();
     double rating = 0;
-    void sumbit() {
-      setState(() {
-        reviews.addReviw(review.text, id, rating);
-        Navigator.of(context).pop();
-      });
-    }
 
     return showDialog<String?>(
         context: context,
@@ -166,6 +160,7 @@ class _MealInfoScreenState extends State<MealInfoScreen> {
                     height: 20,
                   ),
                   TextField(
+                    key: Key('reviewTextField'),
                     autofocus: true,
                     cursorColor: Colors.black,
                     textDirection: TextDirection.rtl,
@@ -175,8 +170,7 @@ class _MealInfoScreenState extends State<MealInfoScreen> {
                         labelStyle:
                             TextStyle(color: Theme.of(context).splashColor)),
                     onSubmitted: ((value) {
-                      sumbit();
-                      reviews.printRev();
+                      sumbitReview(context, review, reviews, id, rating);
                     }),
                   ),
                 ],
@@ -184,17 +178,83 @@ class _MealInfoScreenState extends State<MealInfoScreen> {
             ),
             actions: [
               TextButton(
+                  key: Key('addReview'),
                   child: Text(
                     'تم',
                     style: TextStyle(color: Theme.of(context).splashColor),
                   ),
-                  onPressed: sumbit),
+                  onPressed: (() {
+                    sumbitReview(context, review, reviews, id, rating);
+                  })),
             ],
           );
         }));
   }
+}
 
-  Container reviewsListBuilder(int id, Reviews reviews) {
+setButton(BuildContext context, String title, int setOption, int id) {
+  return InkWell(
+    borderRadius: const BorderRadius.all(Radius.circular(15)),
+    onTap: () {
+      if (setOption == 0) {
+        showBottomSheet(context, AllergiesSheet(id: id));
+      }
+      if (setOption == 1) {
+        showBottomSheet(context, DietSheet(id: id));
+      }
+    },
+    child: Container(
+      margin: const EdgeInsets.all(15),
+      height: 50,
+      width: 150,
+      child: Center(
+          child: Text(
+        title,
+        style: Theme.of(context).textTheme.button,
+      )),
+      //   color: Colors.blueAccent,
+      decoration: BoxDecoration(
+          borderRadius: const BorderRadius.all(Radius.circular(10)),
+          color: Theme.of(context).splashColor),
+    ),
+  );
+}
+
+double calcListHeight(List list) {
+  return (list.length * 20) + 20;
+}
+
+showBottomSheet(BuildContext context, Widget buttomSheet) {
+  return showModalBottomSheet(
+      backgroundColor: Theme.of(context).backgroundColor,
+      context: context,
+      builder: (context) {
+        return Center(child: buttomSheet);
+      });
+}
+
+void sumbitReview(BuildContext context, TextEditingController review,
+    Reviews reviews, int id, double rating) {
+  if (review.text.isEmpty) {
+    Navigator.of(context).pop();
+  } else {
+    reviews.addReviw(review.text, id, rating);
+    Navigator.of(context).pop();
+  }
+}
+
+class ReviewsList extends StatelessWidget {
+  const ReviewsList({
+    Key? key,
+    required this.id,
+    required this.reviews,
+  }) : super(key: key);
+
+  final int id;
+  final Reviews reviews;
+
+  @override
+  Widget build(BuildContext context) {
     double sizedBoxHeight = calcReviewSectionHeight(reviews.getReviews(id));
     bool isEmpty = reviews.getReviews(id).isEmpty;
     return Container(
@@ -233,50 +293,9 @@ class _MealInfoScreenState extends State<MealInfoScreen> {
   }
 }
 
-setButton(BuildContext context, String title, int setOption, int id) {
-  return InkWell(
-    borderRadius: const BorderRadius.all(Radius.circular(15)),
-    onTap: () {
-      if (setOption == 0) {
-        showBottomSheet(context, AllergiesSheet(id: id));
-      }
-      if (setOption == 1) {
-        showBottomSheet(context, DietSheet(id: id));
-      }
-    },
-    child: Container(
-      margin: const EdgeInsets.all(15),
-      height: 50,
-      width: 150,
-      child: Center(
-          child: Text(
-        title,
-        style: Theme.of(context).textTheme.button,
-      )),
-      //   color: Colors.blueAccent,
-      decoration: BoxDecoration(
-          borderRadius: const BorderRadius.all(Radius.circular(10)),
-          color: Theme.of(context).splashColor),
-    ),
-  );
-}
-
-double calcListHeight(List list) {
-  return (list.length * 20) + 20;
-}
-
 double calcReviewSectionHeight(List list) {
   if (list.isEmpty) {
     return 60;
   }
   return (list.length * 60) + 40;
-}
-
-showBottomSheet(BuildContext context, Widget buttomSheet) {
-  return showModalBottomSheet(
-      backgroundColor: Theme.of(context).backgroundColor,
-      context: context,
-      builder: (context) {
-        return Center(child: buttomSheet);
-      });
 }
