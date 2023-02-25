@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/painting.dart';
 import 'package:lets_eat_saudi/models/data/meals_data.dart';
 import 'package:lets_eat_saudi/models/meals.dart';
 
@@ -12,8 +11,6 @@ class AllergiesSheet extends StatelessWidget {
   Widget build(BuildContext context) {
     List<Meal> meals = MealsData().mealsData;
     Meal meal = meals.firstWhere((meal) => meal.id == id);
-    BuildContext ctx = context;
-
     return Center(
       child: Padding(
         padding: const EdgeInsets.all(20),

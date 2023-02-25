@@ -1,9 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:lets_eat_saudi/models/data/meals_data.dart';
-import 'package:lets_eat_saudi/models/data/reviews.dart';
 import 'package:lets_eat_saudi/screens/meal_info_screen.dart';
 import 'package:lets_eat_saudi/widgets/meal_item.dart';
-import 'package:provider/provider.dart';
 import '../models/meals.dart';
 
 class MealsScreen extends StatefulWidget {
@@ -21,18 +19,13 @@ class _MealsScreenState extends State<MealsScreen> {
 
   @override
   void initState() {
-    // This code will add the meals based on the selected category. Note that
-    // some meals belong to more than one category, that's why i made this
-    // inner loops
-    for (var i = 0; i < mealsList.length; i++) {
-      for (var j = 0; j < mealsList[i].categories.length; j++) {
-        if (mealsList[i].categories[j] == widget.category_id) {
-          meals.add(mealsList[i]);
-        }
-      }
-    }
+    meals = addMeals(mealsList, widget.category_id, meals);
     super.initState();
   }
+
+  // This method will add the meals based on the selected category. Note that
+  // some meals belong to more than one category, that's why i made this
+  // inner loops
 
   @override
   Widget build(BuildContext context) {
@@ -72,4 +65,15 @@ class _MealsScreenState extends State<MealsScreen> {
             ),
     );
   }
+}
+
+List<Meal> addMeals(List<Meal> mealsList, int category_id, List<Meal> meals) {
+  for (var i = 0; i < mealsList.length; i++) {
+    for (var j = 0; j < mealsList[i].categories.length; j++) {
+      if (mealsList[i].categories[j] == category_id) {
+        meals.add(mealsList[i]);
+      }
+    }
+  }
+  return meals;
 }
