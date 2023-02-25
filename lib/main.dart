@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:lets_eat_saudi/models/data/favorites.dart';
 import 'package:lets_eat_saudi/models/data/reviews.dart';
 import 'package:lets_eat_saudi/screens/categories_screen.dart';
 import 'package:provider/provider.dart';
@@ -14,8 +15,11 @@ class LetsEatSaudi extends StatelessWidget {
   Widget build(BuildContext context) {
     const backgroundColor = Color.fromRGBO(214, 214, 187, 1);
     const secondaryColor = Color.fromRGBO(149, 39, 57, 1);
-    return ChangeNotifierProvider(
-      create: (context) => Reviews(),
+    return MultiProvider(
+      providers: [
+        ChangeNotifierProvider(create: (ctx) => Reviews()),
+        ChangeNotifierProvider(create: (ctx) => Favorites()),
+      ],
       child: MaterialApp(
           debugShowCheckedModeBanner: false,
           title: "Let's Eat Saudi",
