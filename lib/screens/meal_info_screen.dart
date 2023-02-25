@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:lets_eat_saudi/models/data/favorites.dart';
 import 'package:lets_eat_saudi/models/data/reviews.dart';
 import 'package:lets_eat_saudi/screens/allergies_sheet.dart';
 import 'package:lets_eat_saudi/screens/diet_sheet.dart';
@@ -40,6 +41,7 @@ class _MealInfoScreenState extends State<MealInfoScreen> {
   @override
   Widget build(BuildContext context) {
     final reviewsData = Provider.of<Reviews>(context);
+    final favoritesData = Provider.of<Favorites>(context);
     return Scaffold(
       backgroundColor: Theme.of(context).backgroundColor,
       appBar: AppBar(
@@ -48,12 +50,44 @@ class _MealInfoScreenState extends State<MealInfoScreen> {
           PopupMenuButton(
               itemBuilder: (_) => [
                     PopupMenuItem(
-                      child: Text('اذهب إلى مصدر المعلومات'),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Icon(Icons.info),
+                          SizedBox(
+                            width: 3,
+                          ),
+                          Text('اذهب إلى مصدر المعلومات'),
+                        ],
+                      ),
                       onTap: () => _openUrl(widget.source),
                     ),
                     PopupMenuItem(
-                      child: Text('اذهب إلى مصدر الصورة'),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Icon(Icons.image),
+                          SizedBox(
+                            width: 3,
+                          ),
+                          Text('اذهب إلى مصدر الصورة'),
+                        ],
+                      ),
                       onTap: () => _openUrl(widget.imageUrl),
+                    ),
+                    PopupMenuItem(
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Icon(Icons.favorite),
+                          SizedBox(
+                            width: 3,
+                          ),
+                          Text('إضافة الطبق إلى المفضلة'),
+                        ],
+                      ),
+                      onTap: () => favoritesData.addFavorite(
+                          widget.id, widget.mealName, widget.imageUrl),
                     ),
                   ])
         ],
