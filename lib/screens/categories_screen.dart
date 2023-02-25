@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:lets_eat_saudi/models/data/categories_data.dart';
-import 'package:lets_eat_saudi/models/category.dart';
-import 'package:lets_eat_saudi/widgets/category_item.dart';
+import '/models/data/categories_data.dart';
+import '/models/category.dart';
+import '/screens/favorites_screen.dart';
+import '/widgets/category_item.dart';
 
 class CategoriesScreen extends StatefulWidget {
   const CategoriesScreen({Key? key}) : super(key: key);
@@ -32,6 +33,25 @@ class _CategoriesScreenState extends State<CategoriesScreen> {
     return Scaffold(
         appBar: AppBar(
           title: const Text('التصنيفات'),
+        ),
+        drawer: Drawer(
+          backgroundColor: Theme.of(context).backgroundColor,
+          child: Column(
+            children: [
+              Container(
+                height: 100,
+                color: Colors.redAccent,
+              ),
+              ListTile(
+                leading: Icon(Icons.favorite),
+                title: Text('المفضلة'),
+                onTap: () => Navigator.push(context,
+                    MaterialPageRoute(builder: (context) {
+                  return FavoritesScreen();
+                })),
+              )
+            ],
+          ),
         ),
         backgroundColor: Theme.of(context).backgroundColor,
         body: GridView.count(

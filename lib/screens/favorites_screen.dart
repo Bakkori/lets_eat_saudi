@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:lets_eat_saudi/models/data/favorites.dart';
-import 'package:lets_eat_saudi/widgets/favorite_item.dart';
 import 'package:provider/provider.dart';
+import 'package:lets_eat_saudi/models/data/meals_data.dart';
+import 'package:lets_eat_saudi/models/meals.dart';
+import 'package:lets_eat_saudi/widgets/favorite_item.dart';
+import 'package:lets_eat_saudi/models/data/favorites.dart';
 
 class FavoritesScreen extends StatelessWidget {
   const FavoritesScreen({Key? key}) : super(key: key);
