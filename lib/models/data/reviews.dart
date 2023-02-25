@@ -8,7 +8,6 @@ class Reviews with ChangeNotifier {
     Review('أكلة لا توصف', 1012, 4),
   ];
   List<Review> get reviews {
-    // check the ...
     return [..._reviews];
   }
 
@@ -16,7 +15,6 @@ class Reviews with ChangeNotifier {
     return _reviews.where((rev) => mealId == rev.mealId).toList();
   }
 
-// use saved perfences
   addReviw(String review, int mealId, double rating) {
     _reviews.add(Review(review, mealId, rating));
     notifyListeners();
