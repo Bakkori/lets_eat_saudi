@@ -9,11 +9,13 @@ import 'dart:io';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
+import 'package:lets_eat_saudi/models/data/favorites.dart';
 import 'package:lets_eat_saudi/models/data/reviews.dart';
 import 'package:lets_eat_saudi/screens/allergies_sheet.dart';
 
 import 'package:lets_eat_saudi/screens/categories_screen.dart';
 import 'package:lets_eat_saudi/screens/diet_sheet.dart';
+import 'package:lets_eat_saudi/screens/favorites_screen.dart';
 import 'package:lets_eat_saudi/screens/meal_info_screen.dart';
 import 'package:lets_eat_saudi/screens/meals_screen.dart';
 import 'package:provider/provider.dart';
@@ -101,8 +103,11 @@ void main() {
     expect(find.text('مناسب للحمية النباتية القاسية؟'), findsOneWidget);
   });
   testWidgets('Render meals details page', (WidgetTester tester) async {
-    await tester.pumpWidget(ChangeNotifierProvider(
-      create: (context) => Reviews(),
+    await tester.pumpWidget(MultiProvider(
+      providers: [
+        ChangeNotifierProvider(create: (ctx) => Reviews()),
+        ChangeNotifierProvider(create: (ctx) => Favorites()),
+      ],
       child: MaterialApp(
         home: MealInfoScreen(
             mealName: 'المعصوب',
@@ -115,5 +120,54 @@ void main() {
                 'https://menu360.me/wp-content/uploads/2021/08/0Y2A0110.jpg'),
       ),
     ));
+  });
+
+  testWidgets('Check PopupMenuButton in meals details page',
+      (WidgetTester tester) async {
+    await tester.pumpWidget(MultiProvider(
+      providers: [
+        ChangeNotifierProvider(create: (ctx) => Reviews()),
+        ChangeNotifierProvider(create: (ctx) => Favorites()),
+      ],
+      child: MaterialApp(
+        home: MealInfoScreen(
+            mealName: 'المعصوب',
+            imageUrl:
+                'https://menu360.me/wp-content/uploads/2021/08/0Y2A0110.jpg',
+            ingredients: ['ingredients'],
+            addsOn: ['addsOn'],
+            id: 1011,
+            source:
+                'https://menu360.me/wp-content/uploads/2021/08/0Y2A0110.jpg'),
+      ),
+    ));
+
+    var pupMenuButton = find.byType(PopupMenuButton);
+    await tester.tap(pupMenuButton);
+    await tester.pump();
+  });
+  testWidgets('Render favorites page', (WidgetTester tester) async {
+    await tester.pumpWidget(MultiProvider(
+      providers: [
+        ChangeNotifierProvider(create: (ctx) => Favorites()),
+      ],
+      child: MaterialApp(home: FavoritesScreen()),
+    ));
+
+    expect(find.text('المفضلة'), findsOneWidget);
+    expect(find.text('الأطباق'), findsNothing);
+  });
+
+  testWidgets('check scrollong for favorites page',
+      (WidgetTester tester) async {
+    await tester.pumpWidget(MultiProvider(
+      providers: [
+        ChangeNotifierProvider(create: (ctx) => Favorites()),
+      ],
+      child: MaterialApp(home: FavoritesScreen()),
+    ));
+
+    await tester.drag(find.byType(ListView), const Offset(0, -100));
+    await tester.pump();
   });
 }
