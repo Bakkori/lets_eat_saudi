@@ -38,6 +38,14 @@ class _MealInfoScreenState extends State<MealInfoScreen> {
     }
   }
 
+  late String imageSource;
+
+  @override
+  void initState() {
+    imageSource = getSoruce(widget.imageUrl);
+    super.initState();
+  }
+
   @override
   Widget build(BuildContext context) {
     final reviewsData = Provider.of<Reviews>(context);
@@ -101,6 +109,7 @@ class _MealInfoScreenState extends State<MealInfoScreen> {
               width: double.infinity,
               fit: BoxFit.cover,
             ),
+            (imageSource.isNotEmpty) ? imageSourceSection() : Placeholder(),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
@@ -158,6 +167,47 @@ class _MealInfoScreenState extends State<MealInfoScreen> {
           ],
         ),
       ),
+    );
+  }
+
+  Column imageSourceSection() {
+    return Column(
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: [
+        SizedBox(height: 5),
+        Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Text(
+              'مصدر الصورة',
+              style: TextStyle(color: Colors.grey[600], fontSize: 12),
+            ),
+            SizedBox(width: 3),
+            Icon(
+              Icons.link,
+              color: Colors.grey[600],
+              size: 20,
+            )
+          ],
+        ),
+        Container(
+          padding: EdgeInsets.symmetric(horizontal: 10),
+          height: 30,
+          child: InkWell(
+            splashColor: Colors.black12,
+            onTap: () {
+              _openUrl(widget.imageUrl);
+            },
+            child: Card(
+              color: Colors.white10,
+              child: Text(
+                ' ${widget.imageUrl} ',
+                overflow: TextOverflow.ellipsis,
+              ),
+            ),
+          ),
+        ),
+      ],
     );
   }
 
@@ -332,4 +382,9 @@ double calcReviewSectionHeight(List list) {
     return 60;
   }
   return (list.length * 60) + 40;
+}
+
+String getSoruce(String url) {
+  var tokens = url.split('.com');
+  return tokens[0];
 }
