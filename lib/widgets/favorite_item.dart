@@ -3,6 +3,9 @@ import 'package:lets_eat_saudi/models/data/meals_data.dart';
 import 'package:lets_eat_saudi/models/meals.dart';
 import 'package:lets_eat_saudi/screens/meal_info_screen.dart';
 
+import 'package:lets_eat_saudi/models/data/favorites.dart';
+import 'package:provider/provider.dart';
+
 class FavoriteItem extends StatelessWidget {
   FavoriteItem(
       {Key? key,
@@ -18,6 +21,7 @@ class FavoriteItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     List<Meal> meals = MealsData().mealsData;
+    final favoritesData = Provider.of<Favorites>(context);
     return Padding(
         padding: const EdgeInsets.all(8.0),
         child: Container(
@@ -28,7 +32,10 @@ class FavoriteItem extends StatelessWidget {
               Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [
             Padding(
               padding: const EdgeInsets.all(10.0),
-              child: Icon(Icons.delete),
+              child: IconButton(
+                onPressed: () => removeMeal(favoritesData, mealId),
+                icon: Icon(Icons.delete),
+              ),
             ),
             InkWell(
               onTap: showMeal(meals, context),
@@ -43,12 +50,19 @@ class FavoriteItem extends StatelessWidget {
                   borderRadius: BorderRadius.only(
                       bottomRight: Radius.circular(25),
                       topRight: Radius.circular(25)),
-                  child: Image.network(
-                    imageUrl,
-                    height: 75,
-                    width: 75,
-                    fit: BoxFit.cover,
-                  )),
+                  child: (imageUrl.isNotEmpty)
+                      ? Image.network(
+                          imageUrl,
+                          height: 75,
+                          width: 75,
+                          fit: BoxFit.cover,
+                        )
+                      : Image.asset(
+                          'assets\\images\\meals\\$mealId.jpg',
+                          height: 75,
+                          width: 75,
+                          fit: BoxFit.cover,
+                        )),
             )
           ]),
         ));
@@ -69,4 +83,8 @@ class FavoriteItem extends StatelessWidget {
       }));
     };
   }
+}
+
+removeMeal(Favorites favorites, id) {
+  favorites.removeFavorite(id);
 }

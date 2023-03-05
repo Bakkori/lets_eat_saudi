@@ -39,6 +39,7 @@ dependencies:
   url_launcher: ^6.1.8
   flutter_rating_bar: ^4.0.1
   flutter_launcher_icons: "^0.8.0"
+  fluttertoast: ^8.2.1
 
 dev_dependencies:
   flutter_native_splash: ^0.3.0

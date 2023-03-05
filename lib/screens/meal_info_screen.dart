@@ -94,8 +94,10 @@ class _MealInfoScreenState extends State<MealInfoScreen> {
                           Text('إضافة الطبق إلى المفضلة'),
                         ],
                       ),
-                      onTap: () => favoritesData.addFavorite(
-                          widget.id, widget.mealName, widget.imageUrl),
+                      onTap: () {
+                        favoritesData.addFavorite(
+                            widget.id, widget.mealName, widget.imageUrl);
+                      },
                     ),
                   ])
         ],
