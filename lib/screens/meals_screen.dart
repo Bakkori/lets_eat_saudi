@@ -57,7 +57,9 @@ class _MealsScreenState extends State<MealsScreen> {
                     }));
                   },
                   child: MealItem(
-                      imageUrl: meals[index].imageUrl, name: meals[index].name),
+                      id: meals[index].id,
+                      imageUrl: meals[index].imageUrl,
+                      name: meals[index].name),
                 );
               })
           : const Center(

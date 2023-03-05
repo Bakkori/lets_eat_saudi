@@ -1,10 +1,13 @@
 import 'package:flutter/material.dart';
+import 'dart:io';
 import 'package:lets_eat_saudi/screens/meals_screen.dart';
 
 class MealItem extends StatefulWidget {
-  const MealItem({Key? key, required this.imageUrl, required this.name})
+  const MealItem(
+      {Key? key, required this.imageUrl, required this.name, required this.id})
       : super(key: key);
 
+  final int id;
   final String imageUrl;
   final String name;
 
@@ -23,29 +26,32 @@ class _MealItemState extends State<MealItem> {
           ClipRRect(
               borderRadius: const BorderRadius.only(
                   topLeft: Radius.circular(25), topRight: Radius.circular(25)),
-              child: Image.network(
-                widget.imageUrl,
-                height: 120,
-                width: 150,
-                fit: BoxFit.cover,
-                errorBuilder: (context, error, stackTrace) {
-                  return Container(
-                      height: 100,
-                      width: 100,
-                      child: Center(child: Text('Could not load image!')));
-                },
-                loadingBuilder: (context, child, loadingProgress) {
-                  return loadingProgress == null
-                      ? child
-                      : Container(
-                          margin: EdgeInsets.all(15),
-                          padding: EdgeInsets.all(15),
-                          child: CircularProgressIndicator(
-                            semanticsLabel: 'Loading',
-                            color: Theme.of(context).splashColor,
-                          ));
-                },
-              )),
+              child: (widget.imageUrl.isEmpty)
+                  ? storedImage(widget.id)
+                  : Image.network(
+                      widget.imageUrl,
+                      height: 120,
+                      width: 150,
+                      fit: BoxFit.cover,
+                      errorBuilder: (context, error, stackTrace) {
+                        return Container(
+                            height: 100,
+                            width: 100,
+                            child:
+                                Center(child: Text('Could not load image!')));
+                      },
+                      loadingBuilder: (context, child, loadingProgress) {
+                        return loadingProgress == null
+                            ? child
+                            : Container(
+                                margin: EdgeInsets.all(15),
+                                padding: EdgeInsets.all(15),
+                                child: CircularProgressIndicator(
+                                  semanticsLabel: 'Loading',
+                                  color: Theme.of(context).splashColor,
+                                ));
+                      },
+                    )),
           ClipRRect(
             borderRadius: const BorderRadius.only(
                 bottomRight: Radius.circular(25),
@@ -66,4 +72,19 @@ class _MealItemState extends State<MealItem> {
       ),
     );
   }
+}
+
+Image storedImage(int mealId) {
+  return Image.asset(
+    'assets\\images\\meals\\$mealId.jpg',
+    height: 120,
+    width: 150,
+    fit: BoxFit.cover,
+    errorBuilder: (context, error, stackTrace) {
+      return Container(
+          height: 100,
+          width: 100,
+          child: Center(child: Text('Could not load image!')));
+    },
+  );
 }

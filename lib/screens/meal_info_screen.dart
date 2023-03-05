@@ -104,12 +104,18 @@ class _MealInfoScreenState extends State<MealInfoScreen> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            Image.network(
-              widget.imageUrl,
-              width: double.infinity,
-              fit: BoxFit.cover,
-            ),
-            (imageSource.isNotEmpty) ? imageSourceSection() : Placeholder(),
+            (widget.imageUrl.isEmpty)
+                ? Image.asset(
+                    'assets\\images\\meals\\${widget.id}.jpg',
+                    width: double.infinity,
+                    fit: BoxFit.cover,
+                  )
+                : Image.network(
+                    widget.imageUrl,
+                    width: double.infinity,
+                    fit: BoxFit.cover,
+                  ),
+            (imageSource.isNotEmpty) ? imageSourceSection() : Container(),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [

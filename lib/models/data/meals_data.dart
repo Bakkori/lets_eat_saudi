@@ -4,20 +4,9 @@ class MealsData {
   get mealsData {
     return [
       //حجازي
-      Meal(
-          1011,
-          'المعصوب',
-          [101],
-          true,
-          true,
-          false,
-          false,
-          false,
-          true,
-          ['موز', 'فطيرة'],
-          ['عسل', 'قشطة', 'سمن', 'حليب مبخر'],
-          'https://menu360.me/wp-content/uploads/2021/08/0Y2A0110.jpg',
-          ''),
+      Meal(1011, 'المعصوب', [101], true, true, false, false, false, true,
+          ['موز', 'فطيرة'], ['عسل', 'قشطة', 'سمن', 'حليب مبخر'], '', ''),
+      // 'https://menu360.me/wp-content/uploads/2021/08/0Y2A0110.jpg'
       //////////////////////////////////////////////////////////////////////
       Meal(
           1012,
@@ -678,9 +667,9 @@ class MealsData {
           ['مكسرات '],
           'https://cdn.sotor.com/thumbs/fit630x300/23701/1554109694/%D8%B7%D8%B1%D9%8A%D9%82%D8%A9_%D8%B9%D9%85%D9%84_%D8%A7%D9%84%D8%B3%D8%A7%D9%82%D9%88.jpg',
           'https://cookpad.com/sa/وصفات/16134803-الساقو?ref=search&search_term=طريقة%20الساقو'),
-           /////شمال المملكة
-            Meal(
-           1051,
+      /////شمال المملكة
+      Meal(
+          1051,
           ' منسف   ',
           [105],
           false,
@@ -705,8 +694,8 @@ class MealsData {
           ['كاجو '],
           'https://aau.ac.ae/uploads/editor/source/-.jpg',
           'https://cookpad.com/sa/وصفات/12580340-منسف-اهل-الشمال-تبوك?ref=search&search_term=منسف%20تبوك'),
-         //////////////////////////////////////////////////////////////////////
-         Meal(
+      //////////////////////////////////////////////////////////////////////
+      Meal(
           1052,
           ' المفروكة   ',
           [105],
@@ -728,8 +717,8 @@ class MealsData {
           [' تمر'],
           'https://pbs.twimg.com/media/EV5CEDgWAAUMuq1.jpg',
           'https://cookpad.com/sa/وصفات/15445570-مفروك?ref=search&search_term=مفروك'),
-         //////////////////////////////////////////////////////////////////////
-         Meal(
+      //////////////////////////////////////////////////////////////////////
+      Meal(
           1053,
           ' الفتة    ',
           [105],
@@ -756,8 +745,8 @@ class MealsData {
           ['بقدونس  '],
           'https://www.alrakia.com/wp-content/uploads/2021/01/%D8%B7%D8%B1%D9%8A%D9%82%D8%A9_%D8%B3%D9%84%D8%B7%D8%A9_%D8%A7%D9%84%D9%81%D8%AA%D8%A9.jpg',
           'https://www.alrakia.com/198950-طريقة-عمل-الفتة-السعودية/'),
-          ///////////////////////////////////////////////////////////////////////
-         Meal(
+      ///////////////////////////////////////////////////////////////////////
+      Meal(
           1054,
           ' الخميعه     ',
           [105],
@@ -776,8 +765,8 @@ class MealsData {
           ['سكر اضافي وقت التقديم  '],
           'http://photos.encyclopediacooking.com/image/recipes_pictures%D8%A7%D9%83%D9%84%D8%A9-%D8%A7%D9%84%D8%AE%D9%85%D9%8A%D8%B9%D8%A9-%D8%A7%D9%84%D8%B4%D8%B9%D8%A8%D9%8A%D8%A9-%D8%A7%D9%84%D8%A8%D8%AF%D9%88%D9%8A%D8%A9-%D8%A7%D9%84%D8%B9%D9%86%D8%B2%D9%8A%D9%87-%D8%A7%D9%84%D8%B4%D9%85%D8%A7%D9%84%D9%8A%D9%87-%D9%88%D8%A7%D9%84%D8%B9%D8%B1%D8%A7%D9%82%D9%8A%D8%A9-%D9%88-%D8%A7%D9%84%D8%A3%D8%B1%D8%AF%D9%86%D9%8A%D8%A9.jpg',
           'https://recipes.qassimy.com/طريقة-الخميعه-الشماليه/'),
-         ////////جنوب المملكة
-         Meal(
+      ////////جنوب المملكة
+      Meal(
           1061,
           ' العريكة ',
           [106],
@@ -821,8 +810,8 @@ class MealsData {
           ['عسل '],
           'https://menu360.me/wp-content/uploads/2021/08/0Y2A9989.jpg',
           'https://cookpad.com/sa/وصفات/16350243-المرسه-الجيزانية?ref=search&search_term=المرسى'),
-         //////////////////////////////////////////////////////////////////////
-         Meal(
+      //////////////////////////////////////////////////////////////////////
+      Meal(
           1063,
           ' عصيدة  ',
           [106],
@@ -845,8 +834,8 @@ class MealsData {
           ['عسل وتمر'],
           'http://photos.encyclopediacooking.com/image/recipes_pictures%D8%B7%D8%B1%D9%8A%D9%82%D8%A9-%D8%B9%D8%B5%D9%8A%D8%AF%D8%A9-%D8%A7%D9%84%D8%AA%D9%85%D8%B1-%D9%85%D9%86-%D9%88%D8%B5%D9%81%D8%A7%D8%AA-%D9%88%D8%B7%D8%A8%D8%AE%D8%A7%D8%AA-%D9%85%D9%87%D8%A7-%D8%A7%D9%84%D8%B5%D9%8A%D8%B9%D8%B1%D9%8A.jpg',
           'https://cookpad.com/sa/وصفات/16742505-عصيده?ref=search&search_term=العصيدة'),
-         //////////////////////////////////////////////////////////////////////
-         Meal(
+      //////////////////////////////////////////////////////////////////////
+      Meal(
           1064,
           ' المحشوش  ',
           [106],
@@ -872,7 +861,6 @@ class MealsData {
           ['خس '],
           'https://www.supermama.me/system/App/Models/Recipe/images/000/111/497/watermarked/%D8%A7%D9%84%D9%85%D8%AD%D8%B4%D9%88%D8%B4-%D8%A7%D9%84%D8%AC%D9%8A%D8%B2%D8%A7%D9%86%D9%8A.jpg',
           'https://www.tareekaa.com/طبق-اليوم/اكلات-لحم/63607-طريقة-عمل-المحشوش-الجيزاني'),
-      
     ];
   }
 }
