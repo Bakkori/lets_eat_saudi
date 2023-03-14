@@ -18,7 +18,7 @@ import 'package:lets_eat_saudi/screens/diet_sheet.dart';
 import 'package:lets_eat_saudi/screens/favorites_screen.dart';
 import 'package:lets_eat_saudi/screens/meal_info_screen.dart';
 import 'package:lets_eat_saudi/screens/meals_screen.dart';
-import 'package:lets_eat_saudi/widgets/favorite_item.dart';
+
 import 'package:provider/provider.dart';
 
 void main() {

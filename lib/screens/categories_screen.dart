@@ -3,6 +3,7 @@ import '/models/data/categories_data.dart';
 import '/models/category.dart';
 import '/screens/favorites_screen.dart';
 import '/widgets/category_item.dart';
+//import 'generated/locale_keys.g.dart';
 
 class CategoriesScreen extends StatefulWidget {
   const CategoriesScreen({Key? key}) : super(key: key);
@@ -32,7 +33,7 @@ class _CategoriesScreenState extends State<CategoriesScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          title: const Text('التصنيفات'),
+          title: Text('التصنيفات'),
         ),
         drawer: Drawer(
           backgroundColor: Theme.of(context).backgroundColor,

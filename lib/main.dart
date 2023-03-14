@@ -2,12 +2,19 @@ import 'package:flutter/material.dart';
 import 'package:lets_eat_saudi/models/data/favorites.dart';
 import 'package:lets_eat_saudi/models/data/reviews.dart';
 import 'package:lets_eat_saudi/screens/categories_screen.dart';
-import 'package:lets_eat_saudi/screens/favorites_screen.dart';
-import 'package:lets_eat_saudi/widgets/favorite_item.dart';
+import './translations/codegen_loader.g.dart';
 import 'package:provider/provider.dart';
+import 'package:easy_localization/easy_localization.dart';
 
-void main() {
-  runApp(const LetsEatSaudi());
+Future<void> main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await EasyLocalization.ensureInitialized();
+  runApp(EasyLocalization(
+      supportedLocales: [Locale('en'), Locale('ar')],
+      path: 'assets/translations',
+      fallbackLocale: Locale('en'),
+      assetLoader: CodegenLoader(),
+      child: const LetsEatSaudi()));
 }
 
 class LetsEatSaudi extends StatelessWidget {
@@ -25,6 +32,9 @@ class LetsEatSaudi extends StatelessWidget {
       child: MaterialApp(
           debugShowCheckedModeBanner: false,
           title: "Let's Eat Saudi",
+          localizationsDelegates: context.localizationDelegates,
+          supportedLocales: context.supportedLocales,
+          locale: context.locale,
           theme: ThemeData(
             useMaterial3: true,
             //  androidOverscrollIndicator: AndroidOverscrollIndicator.stretch,

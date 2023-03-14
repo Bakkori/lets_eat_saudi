@@ -1,11 +1,26 @@
 import 'package:lets_eat_saudi/models/meals.dart';
+import 'package:lets_eat_saudi/translations/locale_keys.g.dart';
+import '/translations/codegen_loader.g.dart';
+import 'package:easy_localization/easy_localization.dart';
 
 class MealsData {
   get mealsData {
     return [
       //حجازي
-      Meal(1011, 'المعصوب', [101], true, true, false, false, false, true,
-          ['موز', 'فطيرة'], ['عسل', 'قشطة', 'سمن', 'حليب مبخر'], '', ''),
+      Meal(
+          1011,
+          'المعصوب',
+          [101],
+          true,
+          true,
+          false,
+          false,
+          false,
+          true,
+          [LocaleKeys.banana, 'فطيرة'],
+          ['عسل', 'قشطة', 'سمن', 'حليب مبخر'],
+          '',
+          ''),
       // 'https://menu360.me/wp-content/uploads/2021/08/0Y2A0110.jpg'
       //////////////////////////////////////////////////////////////////////
       Meal(
