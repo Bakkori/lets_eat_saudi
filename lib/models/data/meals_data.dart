@@ -17,7 +17,7 @@ class MealsData {
           false,
           false,
           true,
-          [LocaleKeys.banana, 'فطيرة'],
+          [LocaleKeys.banana.tr(), 'فطيرة'],
           ['عسل', 'قشطة', 'سمن', 'حليب مبخر'],
           '',
           ''),

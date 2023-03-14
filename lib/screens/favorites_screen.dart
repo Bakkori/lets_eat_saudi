@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:lets_eat_saudi/models/data/meals_data.dart';
-import 'package:lets_eat_saudi/models/meals.dart';
 import 'package:lets_eat_saudi/widgets/favorite_item.dart';
 import 'package:lets_eat_saudi/models/data/favorites.dart';
+import 'package:lets_eat_saudi/translations/locale_keys.g.dart';
+import 'package:easy_localization/easy_localization.dart';
 
 class FavoritesScreen extends StatelessWidget {
   const FavoritesScreen({Key? key}) : super(key: key);
@@ -15,7 +15,7 @@ class FavoritesScreen extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         centerTitle: true,
-        title: Text('المفضلة'),
+        title: Text(LocaleKeys.favorites.tr()),
       ),
       backgroundColor: Theme.of(context).backgroundColor,
       body: ListView.builder(

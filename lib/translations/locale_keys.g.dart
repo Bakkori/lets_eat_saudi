@@ -3,5 +3,6 @@
 abstract class  LocaleKeys {
   static const categories = 'categories';
   static const banana = 'banana';
+  static const favorites = 'favorites';
 
 }
