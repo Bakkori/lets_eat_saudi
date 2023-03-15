@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:lets_eat_saudi/screens/categories_screen.dart';
 import 'package:lets_eat_saudi/translations/locale_keys.g.dart';
 import 'package:easy_localization/easy_localization.dart';
 
@@ -26,6 +27,7 @@ class _SetLanguageScreenState extends State<SetLanguageScreen> {
                 ElevatedButton(
                   onPressed: () {
                     context.setLocale(Locale('ar'));
+                    goToMainScreen();
                   },
                   child: Text(
                     'العربية',
@@ -38,6 +40,7 @@ class _SetLanguageScreenState extends State<SetLanguageScreen> {
                 ElevatedButton(
                     onPressed: () {
                       context.setLocale(Locale('en'));
+                      goToMainScreen();
                     },
                     child: Text(
                       'English',
@@ -49,5 +52,11 @@ class _SetLanguageScreenState extends State<SetLanguageScreen> {
         ),
       ),
     );
+  }
+
+  goToMainScreen() {
+    Navigator.push(context, MaterialPageRoute(builder: (context) {
+      return CategoriesScreen();
+    }));
   }
 }

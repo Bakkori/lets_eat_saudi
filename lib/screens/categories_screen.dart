@@ -73,4 +73,8 @@ class _CategoriesScreenState extends State<CategoriesScreen> {
           children: [...categoriesWidgetList],
         ));
   }
+
+  void rebuild() {
+    setState(() {});
+  }
 }

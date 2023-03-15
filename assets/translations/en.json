@@ -1,5 +1,15 @@
 {
   "categories": "Categories",
   "banana": "Banana",
-  "favorites": "Favorites"
+  "favorites": "Favorites",
+  "language": "Language",
+  "choose_language ": "Choose the language",
+  "regions": {
+    "Hijazi": "Hijazi",
+    "Najdi": "Najdi",
+    "Qasimi": "Qasimi",
+    "Eastern": "Eastern",
+    "Northern": "Northern",
+    "Southern": "Southern"
+  }
 }

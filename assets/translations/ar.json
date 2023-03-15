@@ -1,5 +1,15 @@
 {
   "categories": "التصنيفات",
   "banana": "موز",
-  "favorites": "المفضلة"
+  "favorites": "المفضلة",
+  "language": "اللغة",
+  "choose_language ": "اختر اللغة",
+  "regions": {
+    "Hijazi": "حجازي",
+    "Najdi": "نجدي",
+    "Qasimi": "قصيمي",
+    "Eastern": "شرقي",
+    "Northern": "شمالي",
+    "Southern": "جنوبي"
+  }
 }

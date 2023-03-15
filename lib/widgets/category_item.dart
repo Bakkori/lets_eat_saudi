@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:lets_eat_saudi/screens/meals_screen.dart';
+import 'package:easy_localization/easy_localization.dart';
 
 class CategoryItem extends StatelessWidget {
   final int id;
@@ -36,7 +37,7 @@ class CategoryItem extends StatelessWidget {
           ),
           Center(
             child: Text(
-              name,
+              ('regions.${name}').tr(),
               style: const TextStyle(
                   fontSize: 22,
                   fontWeight: FontWeight.bold,
