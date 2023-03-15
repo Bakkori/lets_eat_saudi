@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:lets_eat_saudi/screens/set_language_screen.dart';
 import 'package:lets_eat_saudi/translations/locale_keys.g.dart';
 import '/models/data/categories_data.dart';
 import '/models/category.dart';
@@ -51,7 +52,15 @@ class _CategoriesScreenState extends State<CategoriesScreen> {
                     MaterialPageRoute(builder: (context) {
                   return FavoritesScreen();
                 })),
-              )
+              ),
+              ListTile(
+                leading: Icon(Icons.language),
+                title: Text(LocaleKeys.language.tr()),
+                onTap: () => Navigator.push(context,
+                    MaterialPageRoute(builder: (context) {
+                  return SetLanguageScreen();
+                })),
+              ),
             ],
           ),
         ),
