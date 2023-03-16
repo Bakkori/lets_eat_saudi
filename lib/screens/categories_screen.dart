@@ -74,7 +74,4 @@ class _CategoriesScreenState extends State<CategoriesScreen> {
         ));
   }
 
-  void rebuild() {
-    setState(() {});
-  }
 }

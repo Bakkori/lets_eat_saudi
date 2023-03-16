@@ -209,6 +209,7 @@ class _MealInfoScreenState extends State<MealInfoScreen> {
               child: Text(
                 ' ${widget.imageUrl} ',
                 overflow: TextOverflow.ellipsis,
+                textDirection: TextDirection.ltr,
               ),
             ),
           ),
